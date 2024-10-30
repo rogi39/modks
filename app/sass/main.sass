@@ -57,7 +57,7 @@ img
 	background-color: rgba(0,0,0, .45)
 
 .breadcrumb-block
-	padding: 20px 0 40px 0
+	padding: 20px 0
 	+media-breakpoint-up(md)
 		padding: 40px 0 70px 0
 
@@ -284,7 +284,18 @@ img
 	flex-wrap: wrap
 	margin: 0 -15px
 
+.main
+	padding-top: 69px
+	+media-breakpoint-up(lg)
+		padding-top: 188px
+
 .header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 3
+	background-color: #fff
 	/* .header__overlay */
 	&__overlay
 		position: fixed
@@ -929,12 +940,64 @@ img
 			margin-bottom: 70px
 	&_white
 		color: #fff
+	&_risks
+		max-width: 670px
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+		+media-breakpoint-up(lg)
+			text-align: left
+			margin-left: 9px
+			margin-right: 0
 	&_w670
 		max-width: 670px
+	&_minw670
+		+media-breakpoint-up(lg)
+			min-width: 670px
 	&_consult
 		margin-bottom: 12px
 		+media-breakpoint-up(sm)
 			margin-bottom: 30px
+	&_page
+		font-size: 32px
+		line-height: 1
+		position: absolute
+		bottom: 30px
+		z-index: 1
+		margin: 0
+		+media-breakpoint-up(sm)
+			bottom: 40px
+			font-size: 48px
+		+media-breakpoint-up(md)
+			bottom: 60px
+			font-size: 54px
+
+.favorities
+	display: flex
+	gap: 30px
+	margin-bottom: 8px
+	/* .favorities__item */
+	&__item
+		font-weight: 700
+		font-size: 22px
+		line-height: 120%
+		color: #aeaeae
+		display: flex
+		align-items: center
+		gap: 14px
+		&.active
+			color: #000
+			position: relative
+			z-index: 1
+			&:after
+				content: ''
+				position: absolute
+				width: 100%
+				height: 1px
+				bottom: 0
+				left: 0
+				z-index: 1
+				border-bottom: 1px dashed #000
 
 .title-row
 	display: flex
@@ -957,6 +1020,17 @@ img
 			gap: 35px
 		+media-breakpoint-up(xl)
 			gap: 95px
+	&_favorities
+		flex-direction: column
+		align-items: flex-start
+		gap: 12px
+		+media-breakpoint-up(sm)
+			align-items: flex-end
+			flex-direction: row
+			justify-content: flex-start
+			gap: 30px
+		+media-breakpoint-up(xl)
+			gap: 60px
 	/* .title-row__text */
 	&__text
 		max-width: 377px
@@ -1068,6 +1142,29 @@ img
 			width: 109px
 		+media-breakpoint-up(lg)
 			width: 229px
+	&__left_wa
+		width: auto
+	/* .presentation__img-block */
+	&__img-block
+		position: relative
+	/* .presentation__img-play */
+	&__img-play
+		height: 90px
+		width: 90px
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50%
+		background-color: $accent
+		position: absolute
+		top: calc(50% - 45px)
+		left: calc(50% - 45px)
+	/* .presentation__img-play-svg */
+	&__img-play-svg
+		width: 28px
+		flex: 0 0 28px
+		height: 34px
+		margin-left: 4px
 	/* .presentation__img */
 	&__img
 		width: 100%
@@ -1089,6 +1186,9 @@ img
 	/* .presentation__form */
 	&__form
 
+	/* .presentation__form-block */
+	&__form-block
+		margin-bottom: 36px
 	/* .presentation__form-row */
 	&__form-row
 		+media-breakpoint-up(sm)
@@ -1124,7 +1224,7 @@ img
 	/* .presentation__form-input */
 	&__form-input
 		border-radius: 10px
-		padding: 16px
+		padding: 12px 16px
 		background-color: #fff
 		width: 100%
 		border: none
@@ -1139,6 +1239,10 @@ img
 		padding: 15px 31px
 		font-weight: 700
 		font-size: 18px
+		transition: background-color .35s ease-out, color .35s ease-out
+		&:hover
+			background-color: transparent
+			color: #000
 
 .video-review-item
 	&:hover
@@ -1194,6 +1298,20 @@ img
 		+media-breakpoint-up(sm)
 			font-size: 22px
 
+.partners-slider
+	border: 1px solid #d9d9d9
+	border-radius: 12px
+	/* .partners-slider__item */
+	&__item
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 32px 12px
+		height: 129px
+		border-right: 1px solid #d9d9d9
+	/* .partners-slider__item-img */
+	&__item-img
+
 .news-slider-block
 	position: relative
 
@@ -1211,18 +1329,68 @@ img
 			.news-item
 				border-right: 1px solid #d9d9d9
 
+.more-link
+	font-weight: 700
+	font-size: 16px
+	line-height: 120%
+	text-align: center
+	border-radius: 30px
+	padding: 12px
+	background-color: #e7e9f9
+	display: block
+	color: #000
+	transition: background-color .35s ease-out
+	border: 1px solid #e7e9f9
+	&:hover
+		text-decoration: none
+		color: #000
+		background-color: transparent
+
+.news
+	display: flex
+	flex-direction: column
+	gap: 12px
+	margin-bottom: 70px
+	+media-breakpoint-up(sm)
+		gap: 20px
+	+media-breakpoint-up(md)
+		gap: 42px
+	&_mb0
+		margin-bottom: 0
+	&__row
+		display: flex
+		flex-direction: column
+		gap: 12px
+		+media-breakpoint-up(sm)
+			gap: 0
+			border-radius: 12px
+			border: 1px solid #d9d9d9
+			flex-direction: row
+		.news-item
+			+media-breakpoint-up(sm)
+				border-radius: 0
+				border: none
+				&:not(:last-child)
+					border-right: 1px solid #d9d9d9
+
 .news-item
 	padding: 12px
 	border: 1px solid #d9d9d9
 	border-radius: 8px
 	+media-breakpoint-up(sm)
+		// min-width: 479px
 		border-radius: 12px
+	+media-breakpoint-up(md)
+		padding: 18px
+	+media-breakpoint-up(lg)
 		padding: 28px
 	/* .news-item__img */
 	&__img
-		border-radius: 10px
+		width: 100%
+		border-radius: 8px
 		margin-bottom: 10px
-		+media-breakpoint-up(sm)
+		+media-breakpoint-up(md)
+			border-radius: 10px
 			margin-bottom: 20px
 	/* .news-item__date */
 	&__date
@@ -1238,6 +1406,8 @@ img
 		margin-bottom: 8px
 		+media-breakpoint-up(sm)
 			margin-bottom: 12px
+			font-size: 20px
+		+media-breakpoint-up(md)
 			font-size: 22px
 	/* .news-item__text */
 	&__text
@@ -1249,8 +1419,66 @@ img
 	&__link
 		font-size: 14px
 		color: $accent
+		display: flex
+		align-items: center
+		gap: 6px
 		+media-breakpoint-up(sm)
 			font-size: 16px
+	/* .news-item__link-svg */
+	&__link-svg
+		width: 25px
+		height: 24px
+	/* .news-item__items */
+	&__items
+		display: flex
+		flex-wrap: wrap
+		gap: 12px
+		margin-bottom: 12px
+		+media-breakpoint-up(md)
+			gap: 24px
+	/* .news-item__item */
+	&__item
+		display: flex
+		align-items: center
+		gap: 4px
+	/* .news-item__item-svg */
+	&__item-svg
+		height: 21px
+		width: 21px
+		flex: 0 0 21px
+	/* .news-item__item-text */
+	&__item-text
+		font-size: 16px
+		line-height: 130%
+	/* .news-item__btn-row */
+	&__btn-row
+		display: flex
+		gap: 10px
+		flex-wrap: wrap
+		margin-top: 26px
+	/* .news-item__btn */
+	&__btn
+		font-weight: 700
+		font-size: 14px
+		line-height: 120%
+		text-align: center
+		padding: 13px
+		border-radius: 30px
+		background-color: #e7e9f9
+		color: #000
+		border: 1px solid #e7e9f9
+		transition: background-color .35s ease-out, color .35s ease-out
+		&:hover
+			text-decoration: none
+			background-color: transparent
+			color: #000
+		+media-breakpoint-up(lg)
+			font-size: 16px
+			padding: 13px 19px
+	&__btn_red
+		background-color: $accent
+		color: #fff
+		border-color: $accent
 
 .history-slider-btn
 	+media-breakpoint-up(sm)
@@ -1370,6 +1598,8 @@ img
 			font-size: 70px
 		+media-breakpoint-up(md)
 			font-size: 90px
+		span
+			color: $accent
 	/* .facts__text */
 	&__text
 
@@ -1639,7 +1869,7 @@ img
 		border-radius: 3px
 		background-color: #fff
 		width: 100%
-		padding: 16px
+		padding: 18px 16px
 		border: none
 	/* .consult-form__btn-row */
 	&__btn-row
@@ -1777,6 +2007,531 @@ a.footer__bottom-item
 	&__item-svg
 		height: 36px
 		width: 36px
+
+.page-bg
+	position: relative
+	z-index: 1
+	&:after
+		content: ''
+		height: 80px
+		width: 100%
+		position: absolute
+		bottom: 0
+		left: 0
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%)
+		+media-breakpoint-up(sm)
+			height: 180px
+	/* .page-bg__img */
+	&__img
+		min-height: 300px
+		object-fit: cover
+
+.products
+	/* .products__row */
+	&__row
+		display: flex
+		flex-wrap: wrap
+		gap: 12px
+		+media-breakpoint-up(lg)
+			gap: 30px
+		// margin: 0 -15px
+	/* .products__col */
+	&__col
+		// padding: 0 15px
+		min-width: 1px
+		flex: 0 0 100%
+		max-width: 100%
+	&__col_50
+		+media-breakpoint-up(md)
+			flex: 0 0 calc( 50% - 6px )
+			max-width: calc( 50% - 6px )
+		+media-breakpoint-up(lg)
+			flex: 0 0 calc( 50% - 15px )
+			max-width: calc( 50% - 15px )
+	&__col_33
+		+media-breakpoint-up(md)
+			flex: 0 0 calc( 50% - 6px )
+			max-width: calc( 50% - 6px )
+		+media-breakpoint-up(lg)
+			flex: 0 0 calc( 50% - 15px )
+			max-width: calc( 50% - 15px )
+		+media-breakpoint-up(xl)
+			flex: 0 0 calc( 33.333% - 20px )
+			max-width: calc( 33.333% - 20px )
+
+.products-item
+	height: 364px
+	border-radius: 12px
+	padding: 14px
+	position: relative
+	z-index: 1
+	overflow: hidden
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	background-repeat: no-repeat
+	background-size: cover
+	&:after
+		content: ''
+		height: 100%
+		width: 100%
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		background-color: rgba(0,0,0,.4)
+		transition: background-color .35s ease-out
+	&:hover
+		text-decoration: none
+		&:after
+			background-color: rgba(0,0,0,.85)
+		.products-item__bottom
+			bottom: 0
+	+media-breakpoint-up(sm)
+		height: 464px
+	+media-breakpoint-up(lg)
+		padding: 28px
+	/* .products-item__top */
+	&__top
+		position: relative
+		z-index: 2
+
+	/* .products-item__manager */
+	&__manager
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 10px
+		max-width: 374px
+		border: 1px solid #fff
+		border-radius: 60px
+		padding-right: 12px
+		+media-breakpoint-up(sm)
+			gap: 20px
+	/* .products-item__manager-img */
+	&__manager-img
+		border-radius: 50%
+	/* .products-item__manager-text */
+	&__manager-text
+
+	/* .products-item__manager-name */
+	&__manager-name
+		font-weight: 700
+		font-size: 18px
+		line-height: 100%
+		color: #fff
+		margin-bottom: 6px
+		+media-breakpoint-up(sm)
+			font-size: 20px
+	/* .products-item__manager-position */
+	&__manager-position
+		font-size: 14px
+		line-height: 100%
+		color: #fff
+		+media-breakpoint-up(sm)
+			font-size: 16px
+	/* .products-item__manager-btn */
+	&__manager-btn
+		height: 48px
+		flex: 0 0 48px
+		width: 48px
+		background-color: $accent
+		border-radius: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+	/* .products-item__manager-btn-svg */
+	&__manager-btn-svg
+		height: 22px
+		width: 22px
+		flex: 0 0 22px
+		margin-left: 4px
+	/* .products-item__bottom */
+	&__bottom
+		position: relative
+		z-index: 2
+		// bottom: -110px
+		transition: bottom .35s ease-out
+		+media-breakpoint-up(sm)
+			bottom: -130px
+
+	/* .products-item__title */
+	&__title
+		font-weight: 700
+		font-size: 20px
+		line-height: 120%
+		color: #fff
+		margin-bottom: 18px
+		// min-height: 48px
+		+media-breakpoint-up(sm)
+			font-size: 32px
+			margin-bottom: 88px
+			min-height: 76px
+		+media-breakpoint-up(xl)
+			font-size: 36px
+	/* .products-item__text */
+	&__text
+		color: #fff
+
+.scheme
+	padding: 20px
+	border: 1px solid #d9d9d9
+	+media-breakpoint-up(md)
+		padding: 50px 40px
+	/* .scheme__img */
+	&__img
+		display: none
+		+media-breakpoint-up(md)
+			display: block
+	&__img_mobile
+		display: block
+		margin: 0 auto
+		+media-breakpoint-up(md)
+			display: none
+
+.form-block
+	background-color: #f2f3fb
+	border-radius: 10px
+	padding: 20px
+	+media-breakpoint-up(sm)
+		border-radius: 30px
+		padding: 40px
+	&__title
+		font-weight: 700
+		font-size: 24px
+		line-height: 100%
+		margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			margin-bottom: 40px
+			font-size: 32px
+		+media-breakpoint-up(lg)
+			font-size: 40px
+	&__title_tac
+		text-align: center
+		max-width: 953px
+		margin-left: auto
+		margin-right: auto
+
+.form
+	/* .presentation__form-block */
+	&__block
+		margin-bottom: 24px
+		+media-breakpoint-up(sm)
+			margin-bottom: 36px
+		.form__label
+			margin-bottom: 0
+	&__block_mb0
+		margin-bottom: 0
+	/* .form__row */
+	&__row
+		+media-breakpoint-up(sm)
+			margin-bottom: 30px
+		+media-breakpoint-up(md)
+			margin-right: -18px
+			margin-left: -18px
+			display: flex
+		+media-breakpoint-up(lg)
+			margin-bottom: 60px
+	/* .presentation__form-col */
+	&__col
+		margin-bottom: 24px
+		+media-breakpoint-up(sm)
+			margin-bottom: 36px
+		+media-breakpoint-up(md)
+			margin-bottom: 0
+			flex: 0 0 50%
+			padding-right: 18px
+			padding-left: 18px
+	/* .presentation__form-label */
+	&__label
+		width: 100%
+		margin-bottom: 24px
+		+media-breakpoint-up(sm)
+			margin-bottom: 0
+	/* .presentation__form-label-label */
+	&__label-label
+		font-size: 18px
+		line-height: 110%
+		margin-bottom: 16px
+		display: block
+		+media-breakpoint-up(sm)
+			font-size: 20px
+		+media-breakpoint-up(lg)
+			font-size: 24px
+	/* .presentation__form-input */
+	&__input
+		border-radius: 10px
+		padding: 12px 16px
+		background-color: #fff
+		width: 100%
+		border: none
+	&__textarea
+		height: 170px
+		+media-breakpoint-up(lg)
+			height: 180px
+
+	/* .presentation__form-btn */
+	&__btn
+		width: 100%
+		border: 1px solid #000
+		background-color: #000
+		color: #fff
+		border-radius: 30px
+		padding: 15px 31px
+		font-weight: 700
+		font-size: 18px
+		transition: background-color .35s ease-out, color .35s ease-out
+		&:hover
+			background-color: transparent
+			color: #000
+
+.risks
+	/* .risks__row */
+	&__row
+		margin-top: 30px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-direction: column
+		+media-breakpoint-up(lg)
+			margin-top: 10px
+			flex-direction: row
+
+	/* .risks__limit-title */
+	&__limit-title
+		line-height: 1.2
+		font-weight: bold
+		display: flex
+		align-items: center
+		gap: 16px
+		flex-direction: row-reverse
+		font-size: 48px
+		p
+			margin: 0
+		+media-breakpoint-up(lg)
+			flex-direction: column
+			font-size: 3.646vw
+
+	/* .risks__limit */
+	&__limit
+		display: flex
+		flex-direction: column
+		align-items: center
+
+	/* .risks__limit-icon */
+	&__limit-icon
+		max-width: 48px
+		width: 100%
+		img
+			width: 100%
+		+media-breakpoint-up(lg)
+			max-width: 68px
+
+	/* .risks__limit-text */
+	&__limit-text
+		width: 100%
+		text-align: center
+		margin-top: 16px
+		max-width: 100%
+		+media-breakpoint-up(lg)
+			margin: 0.521vw auto 0
+			max-width: 11.979vw
+
+	/* .risks__circle */
+	&__circle
+		position: relative
+		width: 260px
+		height: 260px
+		margin-top: 24px
+		+media-breakpoint-up(lg)
+			width: 29.948vw
+			height: 29.948vw
+
+	/* .risks__circle-border */
+	&__circle-border
+		border: 1px solid #D9D9D9
+		border-radius: 100%
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		padding: 16px
+		+media-breakpoint-up(lg)
+			padding: 2.5vw
+
+	/* .risks__circle-redPoint */
+	&__circle-redPoint
+		position: absolute
+		display: flex
+		justify-content: flex-end
+		left: -0.26vw
+		top: calc(50% - 0.26vw)
+		width: calc(100% + 0.521vw)
+
+	/* .risks__circle-filled */
+	&__circle-filled
+		width: 100%
+		height: 100%
+		background: #F2F3FB
+		border-radius: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		gap: 1.042vw
+
+	/* .risks__circle-icon */
+	&__circle-icon
+		max-width: 92px
+		width: 100%
+		img
+			width: 100%
+		+media-breakpoint-up(lg)
+			max-width: 9.375vw
+
+	/* .risks__circle-text */
+	&__circle-text
+		width: 100%
+		text-align: center
+
+		font-size: 16px
+		font-weight: 400
+		max-width: 160px
+		+media-breakpoint-up(lg)
+			font-weight: bold
+			font-size: 1.146vw
+			max-width: 13.802vw
+
+	/* .risks__facts */
+	&__facts
+		display: flex
+		flex-direction: column
+		margin-top: 32px
+		gap: 28px
+		align-items: center
+		+media-breakpoint-up(lg)
+			margin-top: 0
+			align-items: flex-start
+			gap: 5.208vw
+
+	/* .risks__facts-item */
+	&__facts-item
+		display: flex
+		flex-direction: column
+		align-items: center
+		text-align: center
+		gap: 12px
+		+media-breakpoint-up(lg)
+			gap: 1.667vw
+			width: 100%
+
+	/* .risks__facts-icon */
+	&__facts-icon
+		max-width: 40px
+		width: 100%
+		+media-breakpoint-up(lg)
+			max-width: 100%
+		img
+			width: 100%
+			height: auto
+			+media-breakpoint-up(lg)
+				width: 2.917vw
+				height: 2.917vw
+
+	/* .risks__facts-title */
+	&__facts-title
+		line-height: 1.3
+		span
+			font-size: 16px
+			font-weight: bold
+			display: block
+			+media-breakpoint-up(lg)
+				font-size: 1.146vw
+
+.team-single
+	/* .team-single__row */
+	&__row
+		display: flex
+		flex-wrap: wrap
+		gap: 30px
+	/* .team-single__left */
+	&__left
+		min-width: 340px
+		+media-breakpoint-up(sm)
+			min-width: 360px
+	/* .team-single__img */
+	&__img
+		border-radius: 12px
+	/* .team-single__right */
+	&__right
+		flex: 1 0 320px
+	/* .team-single__title */
+	&__title
+		font-weight: 700
+		font-size: 28px
+		line-height: 120%
+		margin-bottom: 12px
+		+media-breakpoint-up(sm)
+			font-size: 32px
+		+media-breakpoint-up(md)
+			font-size: 36px
+	/* .team-single__position */
+	&__position
+		font-size: 20px
+		line-height: 120%
+		color: #666
+		margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			font-size: 22px
+			margin-bottom: 30px
+	/* .team-single__text */
+	&__text
+		margin-bottom: 30px
+	/* .team-single__awards */
+	&__awards
+		display: flex
+		gap: 12px
+		flex-wrap: wrap
+		+media-breakpoint-up(sm)
+			gap: 20px
+		+media-breakpoint-up(md)
+			gap: 30px
+	/* .team-single__award */
+	&__award
+		border-radius: 8px
+		background: linear-gradient(to right, #FDB22E, #CD3414)
+		padding: 1px
+		+media-breakpoint-up(sm)
+			border-radius: 12px
+	/* .team-single__award-block */
+	&__award-block
+		border-radius: 8px
+		padding: 8px 16px
+		background-color: #fff
+		display: flex
+		align-items: center
+		gap: 8px
+		height: 100%
+		+media-breakpoint-up(sm)
+			gap: 12px
+			border-radius: 12px
+			padding: 12px 24px
+	/* .team-single__award-svg */
+	&__award-svg
+		width: 32px
+		height: 45px
+
+	/* .team-single__award-text */
+	&__award-text
+		// background: linear-gradient(90deg, #fe5629 0%, #fcab28 100%)
+		// background-clip: text
+		background: linear-gradient(to right,#fe5629, #fcab28)
+		-webkit-background-clip: text
+		background-clip: text
+		-webkit-text-fill-color: transparent
+		font-weight: 700
+		font-size: 18px
 
 @keyframes "fade"
 	from

@@ -279,6 +279,34 @@ const certificateSlider = () => {
 };
 certificateSlider();
 
+const partnersSlider = () => {
+	let slider = new Swiper('.partners-slider', {
+		slidesPerView: 6,
+		pagination: {
+			el: '.partners-slider-pagination',
+			type: 'bullets',
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.6,
+			},
+			576: {
+				slidesPerView: 3,
+			},
+			992: {
+				slidesPerView: 5,
+			},
+		}
+	})
+};
+
+
+
+partnersSlider();
+
+
+
+
 let structureTabs = document.querySelectorAll('.structure__title');
 if (structureTabs) {
 	structureTabs.forEach(el => {
@@ -314,13 +342,11 @@ const openWork = (e) => {
 	if (mapItem.classList.contains('active')) {
 		fadeOut(document.querySelector('.map__item.active'), 300);
 		document.querySelector('.map__item.active').classList.remove('active');
-		document.querySelector('.map__flag.active').classList.remove('active');
 		return;
 	}
 	if (document.querySelector('.map__item.active')) {
 		fadeOut(document.querySelector('.map__item.active'), 300);
 		document.querySelector('.map__item.active').classList.remove('active');
-		document.querySelector('.map__flag.active').classList.remove('active');
 	}
 	// fadeOut(mapItem, document.querySelector('.map__item .active'));
 	mapItem.classList.add('active');
