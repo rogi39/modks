@@ -129,7 +129,7 @@ const newsSlider = () => {
 		breakpoints: {
 			0: {
 				slidesPerView: 1.4,
-				pagination: false,
+				// pagination: false,
 			},
 			576: {
 				slidesPerView: 2.4,
@@ -300,10 +300,33 @@ const partnersSlider = () => {
 	})
 };
 
-
-
 partnersSlider();
 
+const stepsSlider = () => {
+	new Swiper('.steps-slider', {
+		slidesPerView: 4,
+		navigation: {
+			nextEl: '.steps-slider-next',
+			prevEl: '.steps-slider-prev',
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.2,
+			},
+			576: {
+				slidesPerView: 2.2,
+			},
+			992: {
+				slidesPerView: 3,
+			},
+			1200: {
+				slidesPerView: 4,
+			}
+		}
+	})
+};
+
+stepsSlider();
 
 
 

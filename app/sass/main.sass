@@ -156,21 +156,15 @@ img
 		width: 100%
 		margin: 0 auto !important
 	p
-		font-size: 16px
-		font-weight: 400
-		line-height: 24px
 		color: $text
 		margin: 0
 		&:not(:last-child)
 			margin-bottom: 10px
 		+media-breakpoint-up(sm)
 			&:not(:last-child)
-				margin-bottom: 24px
+				margin-bottom: 30px
 	b, strong
 		font-weight: 700
-		font-size: 17px
-		line-height: 24px
-		margin-bottom: 15px
 	a
 		color: $accent
 		text-decoration: underline
@@ -181,13 +175,13 @@ img
 		border-radius: 15px
 	h2
 		font-size: 20px
-		line-height: 26px
 		color: $text
-		font-weight: 600
+		font-weight: 700
 		margin-bottom: 20px
+		line-height: 1.2
 		+media-breakpoint-up(sm)
-			font-size: 24px
-			line-height: 30px
+			margin-bottom: 30px
+			font-size: 36px
 	h3
 		font-size: 19px
 		line-height: 25px
@@ -213,13 +207,16 @@ img
 		+media-breakpoint-up(sm)
 			margin-bottom: 25px
 		li
-			font-size: 16px
-			line-height: 24px
-			font-weight: 300
 			margin-bottom: 10px
 			// display: flex
 			position: relative
 			padding-left: 25px
+			font-size: 16px
+			font-weight: 700
+			+media-breakpoint-up(sm)
+				font-size: 18px
+			+media-breakpoint-up(xl)
+				font-size: 22px
 			&:before
 				content: ''
 				position: absolute
@@ -228,11 +225,11 @@ img
 				width: 8px
 				flex: 0 0 8px
 				border-radius: 50%
-				background-color: $accent
+				background-color: #000
 				box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25)
 				display: inline-block
 				margin-right: 15px
-				margin-top: 7px
+				margin-top: 12px
 	table
 		width: 100%
 		margin-bottom: 20px
@@ -255,6 +252,9 @@ img
 		padding: 70px 0
 	+media-breakpoint-up(xl)
 		padding: 100px 0
+	&_steps
+		background: linear-gradient(to bottom, #fff 40%, #000 30%)
+		overflow: hidden
 	&_pt0
 		padding-top: 0
 	&_pb0
@@ -528,6 +528,13 @@ img
 	gap: 16px
 	&:hover
 		text-decoration: none
+	&_single
+		margin-bottom: 8px
+		.contacts-item__text
+			font-weight: 400
+			font-size: 22px
+			display: block
+			color: $text
 	&_consult
 		margin-bottom: 12px
 		.contacts-item__text
@@ -979,12 +986,16 @@ img
 	/* .favorities__item */
 	&__item
 		font-weight: 700
-		font-size: 22px
+		font-size: 16px
 		line-height: 120%
 		color: #aeaeae
 		display: flex
 		align-items: center
 		gap: 14px
+		+media-breakpoint-up(sm)
+			font-size: 18px
+		+media-breakpoint-up(xl)
+			font-size: 22px
 		&.active
 			color: #000
 			position: relative
@@ -1244,6 +1255,41 @@ img
 			background-color: transparent
 			color: #000
 
+.video-block
+	position: relative
+	/* .video-block__play */
+	&__play
+		height: 70px
+		width: 70px
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50%
+		background-color: $accent
+		position: absolute
+		top: calc(50% - 35px)
+		left: calc(50% - 35px)
+		+media-breakpoint-up(sm)
+			height: 90px
+			width: 90px
+			top: calc(50% - 45px)
+			left: calc(50% - 45px)
+	/* .video-block__play-svg */
+	&__play-svg
+		width: 24px
+		flex: 0 0 24px
+		height: 30px
+		margin-left: 4px
+		+media-breakpoint-up(sm)
+			width: 28px
+			flex: 0 0 28px
+			height: 34px
+	/* .video-block__img */
+	&__img
+		width: 100%
+		object-fit: contain
+		border-radius: 12px
+
 .video-review-item
 	&:hover
 		text-decoration: none
@@ -1328,6 +1374,9 @@ img
 		&:not(:last-child)
 			.news-item
 				border-right: 1px solid #d9d9d9
+
+.news-slider-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
+	bottom: -10px
 
 .more-link
 	font-weight: 700
@@ -2532,6 +2581,208 @@ a.footer__bottom-item
 		-webkit-text-fill-color: transparent
 		font-weight: 700
 		font-size: 18px
+
+.single-video
+	/* .single-video__row */
+	&__row
+		display: flex
+		gap: 30px
+		flex-direction: column
+		+media-breakpoint-up(md)
+			flex-direction: row
+		+media-breakpoint-up(xl)
+			gap: 70px
+
+	/* .single-video__left */
+	&__left
+		+media-breakpoint-up(md)
+			flex: 0 0 50%
+		+media-breakpoint-up(xl)
+			flex: 0 0 703px
+
+	/* .single-video__video */
+	&__video
+		margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			margin-bottom: 44px
+	/* .single-video__question-row */
+	&__question-row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 28px
+		gap: 12px
+		flex-wrap: wrap
+	/* .single-video__name-block */
+	&__name-block
+
+	/* .single-video__name */
+	&__name
+		font-weight: 700
+		font-size: 22px
+		line-height: 120%
+		margin-bottom: 8px
+	/* .single-video__pos */
+	&__pos
+
+	/* .single-video__btn */
+	&__btn
+		font-weight: 700
+		font-size: 18px
+		text-align: center
+		color: #fff
+		border-radius: 30px
+		padding: 12px 31px
+		background-color: $accent
+		width: 233px
+		display: flex
+		align-items: center
+		justify-content: center
+		border: 1px solid $accent
+		transition: background-color .35s ease-out, color .35s ease-out
+		&:hover
+			text-decoration: none
+			background-color: transparent
+			color: $accent
+	/* .single-video__right */
+	&__right
+
+.calc-form
+	margin-top: 70px
+	display: flex
+	align-items: center
+	justify-content: space-between
+	border-radius: 12px
+	padding: 20px
+	gap: 20px
+	background-color: #f2f3fb
+	flex-direction: column
+	+media-breakpoint-up(sm)
+		gap: 30px
+		padding: 42px
+	+media-breakpoint-up(md)
+		flex-direction: row
+	/* .calc-form__text */
+	&__text
+		max-width: 770px
+		font-weight: 700
+		font-size: 20px
+		line-height: 120%
+		+media-breakpoint-up(sm)
+			font-size: 26px
+		+media-breakpoint-up(lg)
+			font-size: 36px
+	/* .calc-form__btn */
+	&__btn
+		font-weight: 700
+		font-size: 16px
+		text-align: center
+		color: #fff
+		border-radius: 30px
+		padding: 17px
+		background-color: #000
+		border: 1px solid #000
+		transition: background-color .35s ease-out, color .35s ease-out
+		+media-breakpoint-up(sm)
+			font-size: 18px
+			min-width: 324px
+			padding: 17px 31px
+		&:hover
+			background-color: transparent
+			color: #000
+			text-decoration: none
+
+.steps-slider
+	overflow: visible
+
+	/* .steps-slider__slide */
+	&__slide
+		border: 1px solid #d9d9d9
+		height: auto
+		background-color: #fff
+		&:not(:first-child)
+			border-left: 0
+
+.steps-offer
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: space-between
+	margin-top: 40px
+	gap: 20px
+	+media-breakpoint-up(sm)
+		margin-top: 110px
+	/* .steps-offer__left */
+	&__left
+
+	/* .steps-offer__right */
+	&__right
+		display: flex
+		flex-wrap: wrap
+		gap: 20px
+		+media-breakpoint-up(md)
+			gap: 60px
+	/* .steps-offer__btn */
+	&__btn
+		font-weight: 700
+		line-height: 100%
+		text-align: center
+		color: #fff
+		border-radius: 30px
+		padding: 16px 31px
+		background-color: $accent
+		display: flex
+		align-items: center
+		border: 1px solid $accent
+		transition: background-color .35s ease-out
+		&:hover
+			text-decoration: none
+			background-color: transparent
+			color: #fff
+
+	/* .steps-offer__text */
+	&__text
+		color: #fff
+		max-width: 316px
+
+.step-item
+	padding: 20px
+	+media-breakpoint-up(sm)
+		padding: 30px
+	/* .step-item__top */
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+	/* .step-item__num */
+	&__num
+		font-weight: 700
+		font-size: 70px
+		line-height: 100%
+		+media-breakpoint-up(md)
+			font-size: 90px
+	/* .step-item__svg */
+	&__svg
+		height: 60px
+		width: 60px
+		+media-breakpoint-up(md)
+			height: 80px
+			width: 80px
+	/* .step-item__content */
+	&__content
+		margin-top: 10px
+		+media-breakpoint-up(md)
+			margin-top: 20px
+	/* .step-item__title */
+	&__title
+		font-weight: 700
+		font-size: 18px
+		line-height: 120%
+		margin-bottom: 6px
+		+media-breakpoint-up(md)
+			font-size: 22px
+	/* .step-item__text */
+	&__text
 
 @keyframes "fade"
 	from
