@@ -802,6 +802,11 @@ img
 			// position: absolute
 			// right: 0
 			// top: 0
+	&__item_center
+		text-align: center
+		.about__item-text
+			margin-left: auto
+			margin-right: auto
 	&__item_border
 
 	/* .about__item-title */
@@ -947,6 +952,14 @@ img
 			margin-bottom: 70px
 	&_white
 		color: #fff
+	&_individual
+		max-width: 953px
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+		margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			margin-bottom: 40px
 	&_risks
 		max-width: 670px
 		margin-left: auto
@@ -2783,6 +2796,73 @@ a.footer__bottom-item
 			font-size: 22px
 	/* .step-item__text */
 	&__text
+
+.service
+	/* .service__row */
+	&__row
+		display: flex
+		flex-wrap: wrap
+		row-gap: 20px
+		margin: 0 -10px
+		+media-breakpoint-up(sm)
+			row-gap: 30px
+		+media-breakpoint-up(wxp)
+			margin: 0 -15px
+			row-gap: 40px
+	/* .service__col */
+	&__col
+		flex: 0 0 100%
+		max-width: 100%
+		padding: 0 10px
+		+media-breakpoint-up(sm)
+			flex: 0 0 50%
+			max-width: 50%
+		+media-breakpoint-up(lg)
+			flex: 0 0 33.333%
+			max-width: 33.333%
+		+media-breakpoint-up(wxp)
+			padding: 0 15px
+			flex: 0 0 25%
+			max-width: 25%
+	/* .service__bg */
+	&__bg
+		background-attachment: fixed
+		height: 320px
+		background-repeat: no-repeat
+		background-position: center
+		margin-top: 40px
+		+media-breakpoint-up(sm)
+			margin-top: 70px
+			height: 420px
+
+.service-item
+	display: flex
+	justify-content: space-between
+	border: 2px solid #f2f3fb
+	border-radius: 12px
+	padding: 24px
+	background-color: #f2f3fb
+	min-height: 100px
+	gap: 10px
+	&:hover
+		text-decoration: none
+	+media-breakpoint-up(sm)
+		min-height: 133px
+	/* .service-item__title */
+	&__title
+		font-weight: 700
+		color: #000
+	/* .service-item__svg */
+	&__svg
+		height: 24px
+		width: 24px
+		flex: 0 0 24px
+
+.individual-text
+	text-align: center
+	margin-bottom: 40px
+	+media-breakpoint-up(sm)
+		margin-bottom: 70px
 
 @keyframes "fade"
 	from
