@@ -991,6 +991,12 @@ img
 		+media-breakpoint-up(md)
 			bottom: 60px
 			font-size: 54px
+	&_service
+		font-size: 20px
+		margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			margin-bottom: 30px
+			font-size: 36px
 
 .favorities
 	display: flex
@@ -2615,9 +2621,6 @@ a.footer__bottom-item
 
 	/* .single-video__video */
 	&__video
-		margin-bottom: 20px
-		+media-breakpoint-up(sm)
-			margin-bottom: 44px
 	/* .single-video__question-row */
 	&__question-row
 		display: flex
@@ -2626,6 +2629,9 @@ a.footer__bottom-item
 		margin-bottom: 28px
 		gap: 12px
 		flex-wrap: wrap
+		margin-top: 20px
+		+media-breakpoint-up(sm)
+			margin-top: 44px
 	/* .single-video__name-block */
 	&__name-block
 
@@ -2863,6 +2869,40 @@ a.footer__bottom-item
 	margin-bottom: 40px
 	+media-breakpoint-up(sm)
 		margin-bottom: 70px
+
+.service-slider
+	/* .service-slider__slide */
+	&__slide
+
+	/* .service-slider__item */
+	&__item
+		display: flex
+		justify-content: space-between
+		gap: 10px
+		flex-direction: column
+		+media-breakpoint-up(sm)
+			gap: 30px
+			flex-direction: row
+		// flex-wrap: wrap
+	/* .service-slider__img-block */
+	&__img-block
+		+media-breakpoint-up(sm)
+			flex: 0 1 650px
+	/* .service-slider__img */
+	&__img
+		border-radius: 10px
+		+media-breakpoint-up(md)
+			border-radius: 30px
+	/* .service-slider__block */
+	&__block
+		+media-breakpoint-up(sm)
+			flex: 0 1 670px
+	/* .service-slider__title */
+	&__title
+	/* .service-slider__text */
+	&__text
+
+.service-slider-pagination
 
 @keyframes "fade"
 	from

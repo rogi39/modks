@@ -328,6 +328,34 @@ const stepsSlider = () => {
 
 stepsSlider();
 
+const serviceSlider = () => {
+	let slider = new Swiper(".service-slider", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		pagination: {
+			el: '.service-slider-pagination',
+			type: 'bullets',
+		},
+		navigation: {
+			nextEl: '.service-slider-next',
+			prevEl: '.service-slider-prev',
+		},
+		breakpoints: {
+			0: {
+				// slidesPerView: 1.4,
+				// pagination: false,
+			},
+			576: {
+				// slidesPerView: 2.4,
+			},
+			768: {
+				// slidesPerView: 4,
+			}
+		}
+	});
+};
+serviceSlider();
+
 
 
 let structureTabs = document.querySelectorAll('.structure__title');
