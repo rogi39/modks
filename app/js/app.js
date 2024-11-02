@@ -452,3 +452,11 @@ for (let i = 0; i < lg.length; i++) {
 		download: false
 	})
 }
+
+document.querySelectorAll('.select').forEach(el => {
+	NiceSelect.bind(el, {
+		// searchable: true,
+		selectedtext: 'выбрано',
+		placeholder: 'Все'
+	});
+})
