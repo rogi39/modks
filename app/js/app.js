@@ -356,6 +356,76 @@ const serviceSlider = () => {
 };
 serviceSlider();
 
+const singleSimpleSlider = () => {
+	let slider = new Swiper(".single-simple-slider", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		pagination: {
+			el: '.single-simple-slider-pagination',
+			type: 'bullets',
+		},
+		navigation: {
+			nextEl: '.single-simple-slider-next',
+			prevEl: '.single-simple-slider-prev',
+		},
+		breakpoints: {
+			0: {
+				// slidesPerView: 1.4,
+				// pagination: false,
+			},
+			576: {
+				// slidesPerView: 2.4,
+			},
+			768: {
+				// slidesPerView: 4,
+			}
+		}
+	});
+};
+singleSimpleSlider();
+
+
+const createProductSingleSlider = () => {
+
+	let thumb = new Swiper(".single-thumbs-slider", {
+
+		spaceBetween: 14,
+		loop: false,
+		autoHeight: false,
+		slidesPerView: 3.5,
+		// slidesPerColumnFill: 'row',
+		breakpoints: {
+			'576': {
+				spaceBetween: 14,
+			},
+			'768': {
+				direction: 'vertical',
+				spaceBetween: 24,
+			}
+		},
+
+	});
+	let big = new Swiper(".single-big-slider", {
+		spaceBetween: 8,
+		autoHeight: false,
+		loop: false,
+		navigation: {
+			nextEl: '.single-big-slider-next',
+			prevEl: '.single-big-slider-prev',
+		},
+		// pagination: {
+		// 	el: '.slider-pagination',
+		// 	clickable: true,
+		// },
+		thumbs: {
+			swiper: thumb,
+		},
+	});
+
+}
+
+createProductSingleSlider();
+
 
 
 let structureTabs = document.querySelectorAll('.structure__title');
