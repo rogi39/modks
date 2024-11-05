@@ -3632,6 +3632,58 @@ a.footer__bottom-item
 	/* .filial__item-list-v */
 	&__item-list-v
 
+.rekviziti
+	/* .rekviziti__row */
+	&__row
+		display: flex
+		flex-direction: column
+		gap: 12px
+		+media-breakpoint-up(lg)
+			gap: 0
+			flex-direction: row
+			margin: 0 -15px
+	/* .rekviziti__col */
+	&__col
+		+media-breakpoint-up(lg)
+			flex: 0 0 33.333%
+			padding: 0 15px
+
+	/* .rekviziti__item */
+	&__item
+		border: 1px solid #d9d9d9
+		border-radius: 10px
+		padding: 10px
+		height: 100%
+		+media-breakpoint-up(sm)
+			padding: 20px
+		+media-breakpoint-up(md)
+			padding: 30px
+
+	/* .rekviziti__item-title */
+	&__item-title
+		font-weight: 700
+		font-size: 20px
+		line-height: 120%
+		margin-bottom: 10px
+		+media-breakpoint-up(sm)
+			font-size: 22px
+
+	/* .rekviziti__item-text */
+	&__item-text
+		margin-bottom: 12px
+
+	/* .rekviziti__item-list */
+	&__item-list
+		display: flex
+		margin-bottom: 4px
+
+	/* .rekviziti__item-list-k */
+	&__item-list-k
+		color: #666
+		flex: 0 0 60px
+	/* .rekviziti__item-list-v */
+	&__item-list-v
+
 @keyframes "fade"
 	from
 		opacity: 0
