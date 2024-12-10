@@ -114,6 +114,35 @@ const videoReviewSlider = () => {
 };
 videoReviewSlider();
 
+const commentSlider = () => {
+	let slider = new Swiper(".comment-slider", {
+		slidesPerView: 3,
+		spaceBetween: 20,
+		pagination: {
+			el: '.comment-slider-pagination',
+			type: 'bullets',
+		},
+		navigation: {
+			nextEl: '.comment-slider-next',
+			prevEl: '.comment-slider-prev',
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+				spaceBetween: 16,
+				pagination: false,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+			1200: {
+				slidesPerView: 3,
+			}
+		}
+	});
+};
+commentSlider();
+
 const newsSlider = () => {
 	let slider = new Swiper(".news-slider", {
 		slidesPerView: 3,
@@ -530,3 +559,20 @@ document.querySelectorAll('.select').forEach(el => {
 		placeholder: 'Все'
 	});
 })
+
+const openTab = (e) => {
+	if (e.target.closest('.qa-item__title-block').parentElement.classList.contains("open")) {
+		e.target.closest('.qa-item__title-block').nextElementSibling.style.maxHeight = "0";
+		e.target.closest('.qa-item__title-block').parentElement.classList.remove("open");
+	} else {
+		e.target.closest('.qa-item__title-block').nextElementSibling.style.maxHeight = e.target.closest('.qa-item__title-block').nextElementSibling.scrollHeight + "px";
+		e.target.closest('.qa-item__title-block').parentElement.classList.add("open");
+	}
+}
+
+let qa = document.querySelectorAll('.qa-item');
+if (qa) {
+	qa.forEach((el, i) => {
+		el.addEventListener('click', openTab);
+	});
+}

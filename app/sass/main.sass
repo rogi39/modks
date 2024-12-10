@@ -320,8 +320,8 @@ img
 	&_posrel
 		position: relative
 		z-index: 1
-	&_gray
-		background-color: #fafafa
+	&_dark
+		background-color: #000
 
 .container
 	padding: 0 10px
@@ -1779,6 +1779,7 @@ img
 .staff-slider
 	/* .staff-slider__wrapper */
 	&__wrapper
+		transition-timing-function: linear
 
 	/* .staff-slider__slide */
 	&__slide
@@ -2925,6 +2926,8 @@ a.footer__bottom-item
 		+media-breakpoint-up(sm)
 			margin-top: 70px
 			height: 420px
+	&__bg_mt0
+		margin-top: 0
 
 .service-item
 	display: flex
@@ -3683,6 +3686,114 @@ a.footer__bottom-item
 		flex: 0 0 60px
 	/* .rekviziti__item-list-v */
 	&__item-list-v
+
+.comment-slider-pagination
+	.swiper-pagination-bullet
+		background: #fff
+	.swiper-pagination-bullet-active
+		background: $accent
+
+.comment-slider
+	/* .comment-slider__slide */
+	&__slide
+
+.comment-review
+	padding: 30px
+	background-color: #fff
+	/* .comment-review__img */
+	&__img
+		margin-bottom: 25px
+
+	/* .comment-review__text */
+	&__text
+		margin-bottom: 35px
+		// min-height: 400px
+	/* .comment-review__link */
+	&__link
+		font-weight: 700
+		line-height: 120%
+		font-size: 14px
+		color: $text
+		display: flex
+		align-items: center
+		gap: 6px
+		transition: color .35s ease-out
+		&:hover
+			text-decoration: none
+			color: $accent
+		+media-breakpoint-up(sm)
+			font-size: 17px
+	/* .comment-review__link-svg */
+	&__link-svg
+		width: 25px
+		height: 24px
+
+.qa-item
+	margin-left: auto
+	margin-right: auto
+	margin-bottom: 10px
+	position: sticky
+	border: 1px solid #D9D9D9
+	&:hover
+		.qa-item__title-block
+			background-color: #d1d4ec
+	+media-breakpoint-up(sm)
+		margin-bottom: 20px
+	// top: 20px
+	&.open
+		.qa-item__btn
+			transform: rotate(45deg)
+	/* .qa-item__title-block */
+	&__title-block
+		background-color: #f2f3fb
+		transition: background-color .35s ease-out
+		display: flex
+		cursor: pointer
+		justify-content: space-between
+		align-items: center
+		padding: 15px
+		gap: 6px
+		+media-breakpoint-up(sm)
+			padding: 22px 30px
+	/* .qa-item__title */
+	&__title
+		font-weight: 700
+		line-height: 120%
+		font-size: 16px
+		color: #000
+		display: flex
+		align-items: center
+		+media-breakpoint-up(md)
+			font-size: 18px
+		+media-breakpoint-up(lg)
+			font-size: 22px
+
+	/* .qa-item__btn */
+	&__btn
+		transition: transform .35s ease-out
+	/* .qa-item__btn-svg */
+	&__btn-svg
+		height: 20px
+		width: 20px
+		flex: 0 0 20px
+		transform: rotate(45deg)
+		fill: $accent
+		transition: fill .35s ease-out, transform .35s ease-out
+	/* .qa-item__text-block */
+	&__text-block
+		max-height: 0
+		overflow: hidden
+		transition: max-height .5s ease
+		a
+			color: $accent
+	/* .qa-item__text */
+	&__text
+		padding: 20px 24px
+		padding-left: 15px
+		// padding-top: 0
+		max-width: 900px
+		+media-breakpoint-up(sm)
+			padding-left: 30px
 
 @keyframes "fade"
 	from
