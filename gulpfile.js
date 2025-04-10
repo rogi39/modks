@@ -16,6 +16,7 @@ let paths = {
 			baseDir + '/libs/lightgallery/js/lightgallery.min.js',
 			baseDir + '/libs/lightgallery/js/lg-video.min.js',
 			baseDir + '/libs/lightgallery/js/lg-thumbnail.min.js',
+			baseDir + '/libs/imask/imask.js',
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
 		dest: baseDir + '/js',

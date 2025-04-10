@@ -47,12 +47,12 @@
 						</a>
 					</div>
 					<div class="header__center-right">
-						<a href="#" class="contacts-item">
+						<span class="contacts-item btn-modal" data-id-modal="modal-director">
 							<svg class="contacts-item__svg">
 								<use xlink:href="images/sprite.svg#message"></use>
 							</svg>
 							<div class="contacts-item__text contacts-item__text_director">Написать ген. директору</div>
-						</a>
+						</span>
 						<a href="mailto:info@modks.com" class="contacts-item">
 							<svg class="contacts-item__svg">
 								<use xlink:href="images/sprite.svg#mail"></use>
@@ -93,7 +93,19 @@
 								</a>
 								<ul class="menu__list">
 									<li class="menu__item"><a href="#" class="menu__link">Компания</a></li>
-									<li class="menu__item"><a href="#" class="menu__link">Продукты</a></li>
+									<li class="menu__item menu__item_sub">
+										<a href="#" class="menu__link">Продукты</a>
+										<span class="menu__item-svg-block">
+											<svg class="menu__item-svg">
+												<use xlink:href="images/sprite.svg#arrow"></use>
+											</svg>
+										</span>
+										<ul class="menu__sub">
+											<li class="menu__sub-item"><a href="#" class="menu__sub-link">Учебные программы</a></li>
+											<li class="menu__sub-item"><a href="#" class="menu__sub-link">Открытые уроки</a></li>
+											<li class="menu__sub-item"><a href="#" class="menu__sub-link">Стажировка</a></li>
+										</ul>
+									</li>
 									<li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
 									<li class="menu__item"><a href="#" class="menu__link">Производство</a></li>
 									<li class="menu__item"><a href="#" class="menu__link">Объекты</a></li>
@@ -103,7 +115,9 @@
 							</div>
 
 							<div class="menu__search">
-								<input type="text" class="search" placeholder="Поиск по сайту">
+								<form class="menu-search-form">
+									<input type="text" class="menu-search-form__input" placeholder="Поиск по сайту" name="s" id="ss">
+								</form>
 							</div>
 							<div class="menu__callback">
 								<a href="#" class="callback-menu">
@@ -124,11 +138,11 @@
 						</nav>
 					</div>
 					<div class="header__bottom-right">
-						<a href="#" class="header__search">
+						<span class="header__search open-search">
 							<svg class="header__search-svg">
 								<use xlink:href="images/sprite.svg#search"></use>
 							</svg>
-						</a>
+						</span>
 						<a href="#" class="header__calc">
 							<svg class="header__calc-svg">
 								<use xlink:href="images/sprite.svg#calc"></use>
@@ -142,10 +156,127 @@
 	</header>
 
 	<main class="main">
-		<div class="section">
+		<div class="first">
 			<div class="container">
-				<div class="title title_w670">3 фактора безопасности контрактов с нами:</div>
+				<div class="first__block">
+					<div class="first__block-row">
+						<h1 class="title title_w560 title_first">Индустриальные модульные котельные и электростанции</h1>
+						<div class="first__experience">
+							<div class="first__experience-title">EPC-подрядчик с 20-летним стажем</div>
+							<div class="first__experience-text">
+								<ul>
+									<li>банковские гарантии 2,9 млрд рублей</li>
+									<li>600+ сотрудников в штате</li>
+									<li>&gt;50 проектов в активной фазе одновременно с 3х факторной системой гарантирования рисков заказчика</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<span class="first__block-btn btn-modal">Получить бюджетную оценку</span>
+				</div>
 			</div>
+			<div class="swiper first-slider">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide first-slider__slide">
+						<img src="images/dest/hero-slider-01.jpg" alt="" class="first-slider__slide-img">
+						<div class="container">
+							<div class="first-slider__slide-block">
+								<a href="#" class="first-slider__slide-block-title">Водогрейная котельная, 60 МВт</a>
+								<div class="first-slider__slide-block-text">для ООО «РИР-Сахалин»<br>Местонахождение: г. Южно-Сахалинск</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide first-slider__slide">
+						<img src="images/dest/hero-slider-02.jpg" alt="" class="first-slider__slide-img">
+						<div class="container">
+							<div class="first-slider__slide-block">
+								<a href="#" class="first-slider__slide-block-title">Водогрейная котельная, 75 МВт</a>
+								<div class="first-slider__slide-block-text">для ЖК «Новые Ватутинки. Десна»<br>Местонахождение: г. Москва</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide first-slider__slide">
+						<img src="images/dest/hero-slider-03.jpg" alt="" class="first-slider__slide-img">
+						<div class="container">
+							<div class="first-slider__slide-block">
+								<a href="#" class="first-slider__slide-block-title">БМК Домодедово, 52,3 МВт</a>
+								<div class="first-slider__slide-block-text">Местонахождение: г. Домодедово</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="first-slider__btn">
+						<div class="slider-btn">
+							<div class="slider-btn__item slider-btn__item_prev first-slider-prev">
+								<svg class="slider-btn__svg">
+									<use xlink:href="images/sprite.svg#arrow-slider"></use>
+								</svg>
+							</div>
+							<div class="slider-btn__item slider-btn__item_next first-slider-next">
+								<svg class="slider-btn__svg">
+									<use xlink:href="images/sprite.svg#arrow-slider"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="first-slider-pagination"></div>
+			</div>
+			<div class="first__mobile-block">
+				<div class="first__experience first__experience_mobile">
+					<div class="first__experience-title">Опытнейший ЕРС подрядчик</div>
+					<div class="first__experience-text first__experience-text_mobile">с 3х факторной системой гарантирования рисков заказчика</div>
+				</div>
+				<span class="first__block-btn first__block-btn_mobile btn-modal">Получить бюджетную оценку</span>
+			</div>
+		</div>
+		<div class="section section_pb0">
+			<div class="container">
+				<div class="title title_w670 title_mb">3 фактора безопасности контрактов с нами:</div>
+			</div>
+			<div class="company-facts">
+				<div class="container">
+					<div class="company-facts__block">
+						<div class="company-facts__count">300+</div>
+						<div class="company-facts__count-text">запущенных модульных котельных и электростанций</div>
+					</div>
+					<div class="company-facts__row">
+						<div class="company-facts__col">
+							<div class="company-facts__item">
+								<div class="company-facts__item-number">1</div>
+								<div class="company-facts__item-title">Инжиниринговая команда №1 на рынке</div>
+								<ul class="company-facts__item-list">
+									<li class="company-facts__item-list-item"><span>2 сборочных завода = 20 000+ м2</span></li>
+									<li class="company-facts__item-list-item"><span>5 проектных офисов = 80+ проектировщиков</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="company-facts__col">
+							<div class="company-facts__item">
+								<div class="company-facts__item-number">2</div>
+								<div class="company-facts__item-title">Система управления проектами</div>
+								<ul class="company-facts__item-list">
+									<li class="company-facts__item-list-item"><span>7 групп руководителей проектов</span></li>
+									<li class="company-facts__item-list-item"><span>30+ объектов одновременно</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="company-facts__col">
+							<div class="company-facts__item">
+								<div class="company-facts__item-number">3</div>
+								<div class="company-facts__item-title">3х уровневое покрытие банковскими гарантиями</div>
+								<ul class="company-facts__item-list">
+									<li class="company-facts__item-list-item"><span>Общий банковский лимит 2,8 млрд</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<img src="images/company-fact-bg.png" alt="facts">
+			</div>
+
+
 		</div>
 
 		<div class="section">
@@ -153,150 +284,297 @@
 				<div class="title-row title-row_favorities">
 					<div class="title">Примеры проектов</div>
 					<div class="favorities">
-						<div class="favorities__item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<div class="favorities__item favorite-btn active" data-tab="1"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M9.10329 2.30662C9.47013 1.56345 10.5299 1.56345 10.8967 2.30662L12.8576 6.27908C13.0031 6.57393 13.2843 6.77839 13.6096 6.82594L17.9962 7.46711C18.8161 7.58695 19.1429 8.59479 18.5493 9.17295L15.3768 12.263C15.1409 12.4927 15.0333 12.8239 15.0889 13.1484L15.8374 17.5126C15.9775 18.3296 15.12 18.9525 14.3864 18.5667L10.4655 16.5048C10.1741 16.3515 9.82593 16.3515 9.53455 16.5048L5.61363 18.5667C4.88 18.9525 4.02245 18.3296 4.16257 17.5126L4.91109 13.1484C4.96675 12.8239 4.85908 12.4927 4.62321 12.263L1.45068 9.17295C0.857085 8.59479 1.18387 7.58695 2.00378 7.46711L6.39037 6.82594C6.71572 6.77839 6.99691 6.57393 7.14245 6.27908L9.10329 2.30662Z" stroke="#E30513" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>Значимые проекты</div>
-						<div class="favorities__item active">Остальные объекты</div>
-					</div>
-				</div>
-				<div class="news news_mb0">
-					<div class="news__row">
-						<div class="news-item">
-							<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
-							<div class="news-item__title">Амурский завод</div>
-							<div class="news-item__items">
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#calendar"></use>
-									</svg>
-									<div class="news-item__item-text">Год сдачи: 2024</div>
-								</div>
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#volt"></use>
-									</svg>
-									<div class="news-item__item-text">88 мВт</div>
-								</div>
-							</div>
-							<div class="news-item__btn-row">
-								<a href="#" class="news-item__btn">Узнать сроки строительства</a>
-								<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
-							</div>
+							</svg>
+							<div class="favorities__item-text">Значимые проекты</div>
 						</div>
-						<div class="news-item">
-							<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
-							<div class="news-item__title">Амурский завод</div>
-							<div class="news-item__items">
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#calendar"></use>
-									</svg>
-									<div class="news-item__item-text">Год сдачи: 2024</div>
-								</div>
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#volt"></use>
-									</svg>
-									<div class="news-item__item-text">88 мВт</div>
-								</div>
-							</div>
-							<div class="news-item__btn-row">
-								<a href="#" class="news-item__btn">Узнать сроки строительства</a>
-								<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
-							</div>
-						</div>
-						<div class="news-item">
-							<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
-							<div class="news-item__title">Амурский завод</div>
-							<div class="news-item__items">
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#calendar"></use>
-									</svg>
-									<div class="news-item__item-text">Год сдачи: 2024</div>
-								</div>
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#volt"></use>
-									</svg>
-									<div class="news-item__item-text">88 мВт</div>
-								</div>
-							</div>
-							<div class="news-item__btn-row">
-								<a href="#" class="news-item__btn">Узнать сроки строительства</a>
-								<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
-							</div>
-						</div>
-					</div>
-					<div class="news__row">
-						<div class="news-item">
-							<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
-							<div class="news-item__title">Амурский завод</div>
-							<div class="news-item__items">
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#calendar"></use>
-									</svg>
-									<div class="news-item__item-text">Год сдачи: 2024</div>
-								</div>
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#volt"></use>
-									</svg>
-									<div class="news-item__item-text">88 мВт</div>
-								</div>
-							</div>
-							<div class="news-item__btn-row">
-								<a href="#" class="news-item__btn">Узнать сроки строительства</a>
-								<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
-							</div>
-						</div>
-						<div class="news-item">
-							<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
-							<div class="news-item__title">Амурский завод</div>
-							<div class="news-item__items">
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#calendar"></use>
-									</svg>
-									<div class="news-item__item-text">Год сдачи: 2024</div>
-								</div>
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#volt"></use>
-									</svg>
-									<div class="news-item__item-text">88 мВт</div>
-								</div>
-							</div>
-							<div class="news-item__btn-row">
-								<a href="#" class="news-item__btn">Узнать сроки строительства</a>
-								<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
-							</div>
-						</div>
-						<div class="news-item">
-							<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
-							<div class="news-item__title">Амурский завод</div>
-							<div class="news-item__items">
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#calendar"></use>
-									</svg>
-									<div class="news-item__item-text">Год сдачи: 2024</div>
-								</div>
-								<div class="news-item__item">
-									<svg class="news-item__item-svg">
-										<use xlink:href="images/sprite.svg#volt"></use>
-									</svg>
-									<div class="news-item__item-text">88 мВт</div>
-								</div>
-							</div>
-							<div class="news-item__btn-row">
-								<a href="#" class="news-item__btn">Узнать сроки строительства</a>
-								<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
-							</div>
+						<div class="favorities__item favorite-btn" data-tab="2">
+							<div class="favorities__item-text">Остальные объекты</div>
 						</div>
 					</div>
 				</div>
+				<div class="favorite-content active" data-tab-content="1">
+					<div class="news news_mb0">
+						<div class="news__row">
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">123Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+						</div>
+						<div class="news__row">
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="favorite-content" data-tab-content="2">
+					<div class="news news_mb0">
+						<div class="news__row">
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+						</div>
+						<div class="news__row">
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+							<div class="news-item">
+								<img src="images/dest/news1.jpg" alt="news" class="news-item__img">
+								<div class="news-item__title">Амурский завод</div>
+								<div class="news-item__items">
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#calendar"></use>
+										</svg>
+										<div class="news-item__item-text">Год сдачи: 2024</div>
+									</div>
+									<div class="news-item__item">
+										<svg class="news-item__item-svg">
+											<use xlink:href="images/sprite.svg#volt"></use>
+										</svg>
+										<div class="news-item__item-text">88 мВт</div>
+									</div>
+								</div>
+								<div class="news-item__btn-row">
+									<a href="#" class="news-item__btn">Узнать сроки строительства</a>
+									<a href="#" class="news-item__btn news-item__btn_red">Рассчитать бюджет</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 
@@ -424,12 +702,10 @@
 									</svg>
 								</div>
 								<div class="step-item__content">
-									<div class="step-item__title">Клиент:</div>
-									<div class="step-item__text">Направить заполненный ОЛ</div>
-								</div>
-								<div class="step-item__content">
-									<div class="step-item__title">МКС:</div>
-									<div class="step-item__text">Подготовим ОТР (основные технические решения) и КП (коммерческое предложение)</div>
+									<h3>Клиент:</h3>
+									<p>Направить заполненный ОЛ</p>
+									<h3>МКС:</h3>
+									<p>Подготовим ОТР (основные технические решения) и КП (коммерческое предложение)</p>
 								</div>
 							</div>
 						</div>
@@ -985,7 +1261,7 @@
 									<div class="consult-form__col">
 										<label class="consult-form__label">
 											<div class="consult-form__label-text">Телефон:</div>
-											<input type="text" class="consult-form__input" placeholder="+7 (___) — ___ — ____">
+											<input type="text" class="consult-form__input tel" placeholder="+7 (___) — ___ — ____">
 										</label>
 									</div>
 								</div>
@@ -1897,6 +2173,7 @@
 						<div class="qa-item__text">На нашем сайте – <a href="https://modks.com/portfolio">https://modks.com/portfolio</a></div>
 					</div>
 				</div>
+				<a href="#" class="request-item">Опросный лист на водогрейную котельную</a>
 			</div>
 		</div>
 
@@ -1979,6 +2256,75 @@
 			</div>
 		</div>
 	</footer>
+
+
+	<div class="modal" id="modal-director">
+		<div class="modal__block modal__block_w700">
+			<div class="modal__success-block">
+				<img src="images/success.svg" alt="success" class="modal__success">
+				<div class="modal__title">Сообщение успешно отправлено</div>
+				<div class="modal__subtitle">Мы получили ваше сообщение и свяжемся с вами в ближайшее время</div>
+			</div>
+			<div class="modal__close">
+				<svg class="modal__close-svg">
+					<use xlink:href="images/sprite.svg#close"></use>
+				</svg>
+			</div>
+			<div class="modal__title">Написать генеральному директору</div>
+			<form class="modal-form">
+				<label class="modal-form__label">
+					<div class="modal-form__label-text">Ваше имя:</div>
+					<input type="text" class="modal-form__input" placeholder="Как вас зовут?" name="modal-director-name">
+				</label>
+				<label class="modal-form__label">
+					<div class="modal-form__label-text">Ваш телефон:</div>
+					<input type="text" class="modal-form__input tel" placeholder="+7 (___) — ___ — ____" name="modal-director-phone">
+				</label>
+				<label class="modal-form__label">
+					<div class="modal-form__label-text">Ваша почта:</div>
+					<input type="text" class="modal-form__input" placeholder="Email" name="modal-director-email">
+				</label>
+				<label class="modal-form__label">
+					<div class="modal-form__label-text">Какая продукция Вас интересует?</div>
+					<input type="text" class="modal-form__input" name="modal-director-message">
+				</label>
+				<div class="modal-form__btn-row">
+					<button class="modal-form__btn">Проконсультироваться</button>
+					<div class="modal-form__btn-text">Нажимая кнопку отправить, вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="modal" id="modal-search">
+		<div class="modal__close">
+			<svg class="modal__close-svg">
+				<use xlink:href="images/sprite.svg#close"></use>
+			</svg>
+		</div>
+		<div class="modal__content">
+			<form class="search-form">
+				<input type="text" class="search-form__input search-form__input_modal" placeholder="Поиск по сайту">
+				<button class="search-form__btn search-form__btn_modal"><svg class="search-form__btn-svg">
+						<use xlink:href="images/sprite.svg#search"></use>
+					</svg></button>
+			</form>
+		</div>
+	</div>
+
+	<div class="modal" id="modal-success">
+		<div class="modal__block modal__block_w700 modal__block_success">
+			<div class="modal__close">
+				<svg class="modal__close-svg">
+					<use xlink:href="images/sprite.svg#close"></use>
+				</svg>
+			</div>
+			<img src="images/success.svg" alt="success" class="modal__success">
+			<div class="modal__title">Сообщение успешно отправлено</div>
+			<div class="modal__subtitle">Мы получили ваше сообщение и свяжемся с вами в ближайшее время</div>
+		</div>
+	</div>
+
 
 	<script src="js/app.min.js"></script>
 

@@ -38,6 +38,8 @@ img
 	height: 0
 	overflow: hidden
 	margin-bottom: 30px
+	&_mb0
+		margin-bottom: 0
 	iframe, video
 		position: absolute
 		top: 0
@@ -78,6 +80,16 @@ img
 		overflow: hidden
 		flex-wrap: wrap
 		padding-bottom: 0
+	&_products
+		.breadcrumb__link
+			color: #fff
+			&:hover
+				color: #ddd
+		.breadcrumb__item_active
+			color: #ddd
+
+		// position: absolute
+		// bottom: 30px
 	&__item
 		flex: 0 0 auto
 		+media-breakpoint-up(sm)
@@ -86,6 +98,7 @@ img
 		color: #231F20
 		display: flex
 		align-items: center
+		transition: color .35s ease-out
 		&:after
 			content: ''
 			height: 4px
@@ -132,8 +145,16 @@ img
 
 .content
 	margin-bottom: 30px
+	&_mt30
+		margin-top: 30px
 	&_m0
 		margin: 0
+	hr
+		border: none
+		color: #d9d9d9
+		background-color: #d9d9d9
+		height: 1px
+		margin: 30px 0
 	iframe
 		width: 100%
 		margin: 0 auto !important
@@ -141,10 +162,10 @@ img
 		color: $text
 		margin: 0
 		&:not(:last-child)
-			margin-bottom: 10px
+			margin-bottom: 8px
 		+media-breakpoint-up(sm)
 			&:not(:last-child)
-				margin-bottom: 30px
+				margin-bottom: 16px
 	b, strong
 		font-weight: 700
 	a
@@ -161,6 +182,7 @@ img
 		font-weight: 700
 		margin-bottom: 20px
 		line-height: 1.2
+		margin-top: 24px
 		+media-breakpoint-up(sm)
 			margin-bottom: 30px
 			font-size: 36px
@@ -169,7 +191,8 @@ img
 		font-size: 18px
 		line-height: 120%
 		color: $text
-		margin-bottom: 20px
+		margin-bottom: 16px
+		margin-top: 32px
 		+media-breakpoint-up(sm)
 			font-size: 22px
 	ol
@@ -212,6 +235,9 @@ img
 				margin-top: 7px
 				+media-breakpoint-up(sm)
 					margin-top: 9px
+			ul
+				margin-top: 15px
+				margin-bottom: 15px
 
 			// margin-bottom: 10px
 			// // display: flex
@@ -310,9 +336,13 @@ img
 		padding: 70px 0
 	+media-breakpoint-up(xl)
 		padding: 100px 0
+	&_service
+		padding-bottom: 30px
 	&_steps
 		background: linear-gradient(to bottom, #fff 40%, #000 30%)
 		overflow: hidden
+	&_steps-bg
+		background: #000
 	&_pt0
 		padding-top: 0
 	&_pb0
@@ -327,7 +357,15 @@ img
 	padding: 0 10px
 	margin: 0 auto
 	width: 100%
+	// +media-breakpoint-up(sm)
+	// 	max-width: 540px
+	// +media-breakpoint-up(md)
+	// 	max-width: 720px
+	+media-breakpoint-up(lg)
+		max-width: 960px
 	+media-breakpoint-up(xl)
+		max-width: 1140px
+	+media-breakpoint-up(wxp)
 		max-width: 1460px
 	&_text
 		+media-breakpoint-up(xl)
@@ -345,7 +383,7 @@ img
 .main
 	padding-top: 69px
 	+media-breakpoint-up(lg)
-		padding-top: 188px
+		padding-top: 180px
 
 .header
 	position: fixed
@@ -430,9 +468,9 @@ img
 		display: flex
 		align-items: center
 		gap: 12px
-		+media-breakpoint-up(sm)
-			gap: 20px
 		+media-breakpoint-up(xl)
+			gap: 20px
+		+media-breakpoint-up(wxp)
 			gap: 40px
 
 	/* .header__bottom */
@@ -458,7 +496,10 @@ img
 	&__search
 		display: flex
 		align-items: center
-		margin-right: 20px
+		width: 56px
+		justify-content: center
+		cursor: pointer
+		// margin-right: 20px
 	/* .header__search-svg */
 	&__search-svg
 		width: 28px
@@ -467,22 +508,25 @@ img
 	&__calc
 		display: flex
 		align-items: center
-		gap: 16px
+		gap: 8px
 		background-color: $accent
-		padding: 14px 16px
+		padding: 12px 8px
 		position: relative
 		&:hover
 			text-decoration: none
-		&:after
-			content: ''
-			height: 100%
-			width: 10px
-			background-color: $accent
-			position: absolute
-			right: -10px
 		+media-breakpoint-up(wxp)
-			&:after
-				display: none
+			gap: 16px
+			padding: 14px 16px
+		// &:after
+		// 	content: ''
+		// 	height: 100%
+		// 	width: 10px
+		// 	background-color: $accent
+		// 	position: absolute
+		// 	right: -10px
+		// +media-breakpoint-up(wxp)
+		// 	&:after
+		// 		display: none
 	/* .header__calc-svg */
 	&__calc-svg
 		height: 28px
@@ -497,6 +541,8 @@ img
 		position: relative
 		z-index: 1
 		color: $text
+		height: 35px
+		cursor: pointer
 		&:hover
 			text-decoration: none
 			color: $text
@@ -537,6 +583,8 @@ img
 	align-items: center
 	gap: 8px
 	+media-breakpoint-up(lg)
+		gap: 16px
+	+media-breakpoint-up(wxp)
 		gap: 20px
 	&:hover
 		text-decoration: none
@@ -553,7 +601,7 @@ img
 	&__img
 		max-width: 40px
 		+media-breakpoint-up(lg)
-			max-width: 100%
+			max-width: 55px
 	/* .logo__text */
 	&__text
 	/* .logo__title */
@@ -565,6 +613,8 @@ img
 		+media-breakpoint-up(lg)
 			max-width: 100%
 			margin-bottom: 6px
+	&__title_20
+		display: none
 	/* .logo__year */
 	&__year
 		display: none
@@ -573,31 +623,44 @@ img
 		color: #828993
 		+media-breakpoint-up(lg)
 			display: block
+	&__year_20
+		line-height: 15px
+		font-size: 14px
+		font-weight: 700
+		display: block
+		color: #000
+		+media-breakpoint-up(sm)
+			line-height: 20px
+			font-size: 15px
 
 .lang-mob
 	color: $accent
 	font-weight: 700
+	&:hover
+		color: $accent
 	+media-breakpoint-up(lg)
 		display: none
 
 .contacts-item
 	display: flex
 	align-items: center
-	gap: 16px
+	gap: 8px
+	+media-breakpoint-up(xl)
+		gap: 12px
 	&:hover
 		text-decoration: none
 	&_single
 		margin-bottom: 8px
 		.contacts-item__text
 			font-weight: 400
-			font-size: 22px
+			font-size: 20px
 			display: block
 			color: $text
 	&_consult
 		margin-bottom: 12px
 		.contacts-item__text
 			color: $accent
-			font-size: 34px
+			font-size: 28px
 			display: block
 			font-weight: 700
 			+media-breakpoint-up(xl)
@@ -631,7 +694,9 @@ img
 	&__text_director
 		border-bottom: 1px dashed $text
 	&__text_phone
-		font-size: 22px
+		font-size: 20px
+		+media-breakpoint-up(wxp)
+			font-size: 22px
 
 .menu
 	width: 330px
@@ -668,21 +733,25 @@ img
 		margin: 0
 		padding: 0
 		list-style-type: none
+		position: relative
 		+media-breakpoint-up(lg)
 			display: flex
 			justify-content: space-between
 			gap: 12px
-		+media-breakpoint-up(xl)
+		+media-breakpoint-up(wxp)
 			gap: 0
-			justify-content: flex-start
+			// justify-content: flex-start
 	/* .menu__item */
 	&__item
-		display: flex
-		align-items: center
 		margin-bottom: 18px
+
+		position: relative
 		+media-breakpoint-up(lg)
+			display: flex
+			align-items: center
 			margin-bottom: 0
-		+media-breakpoint-up(xl)
+			padding: 17px 0
+		+media-breakpoint-up(wxp)
 			&:not(:last-child)
 				&:after
 					content: ''
@@ -692,11 +761,55 @@ img
 					flex: 0 0 4px
 					background-color: $text
 					border-radius: 50%
-					margin: 0 20px
-		+media-breakpoint-up(wxp)
+					margin: 0 32px
+		+media-breakpoint-up(wxpp)
 			&:not(:last-child)
 				&:after
-					margin: 0 30px
+					// margin: 0 30px
+		&.open
+			.menu__item-svg
+				transform: rotate(180deg)
+			.menu__link
+				color: $accent
+			.menu__sub
+				padding-top: 10px
+		+media-breakpoint-up(lg)
+			&:hover
+				.menu__item-svg
+					fill: $accent
+					transform: rotate(180deg)
+				.menu__sub
+					display: block
+				.menu__link
+					color: $accent
+					text-decoration: none
+	&__item_service
+		position: initial
+		.menu__sub
+			flex-direction: column
+			flex-wrap: wrap
+			column-gap: 12px
+			max-height: 0
+			+media-breakpoint-up(lg)
+				display: none
+				max-height: 404px
+				width: 941px
+				left: 0
+		.menu__sub-item
+			max-width: 270px
+		.menu__sub-item_category
+			font-weight: 700
+		&.open
+			.menu__sub
+				display: block
+		+media-breakpoint-up(lg)
+			&:hover
+				.menu__sub
+					display: flex
+
+	&__item_sub
+		&:after
+			content: ''
 
 	/* .menu__link */
 	&__link
@@ -704,6 +817,8 @@ img
 		font-weight: 700
 		font-size: 26px
 		line-height: 120%
+		&.active
+			color: $accent
 		&:hover
 			color: $accent
 			text-decoration: none
@@ -744,16 +859,102 @@ img
 	&__calc
 		+media-breakpoint-up(lg)
 			display: none
+	/* .menu__item-svg-block */
+	&__item-svg-block
+		position: relative
+		bottom: 0px
+		// left: 10px
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		width: 40px
+		+media-breakpoint-up(lg)
+			display: none
+			// left: 4px
+			width: auto
+	/* .menu__item-svg */
+	&__item-svg
+		fill: $text
+		height: 12px
+		width: 12px
+		transition: fill .35s ease-out
+	/* .menu__sub-block */
+	&__sub-block
+		&:not(:last-child)
+			margin-bottom: 10px
+		+media-breakpoint-up(lg)
+			&:not(:last-child)
+				margin-bottom: 0
+	/* .menu__sub */
+	&__sub
+		list-style-type: none
+		padding: 0
+		padding-left: 10px
+		margin: 0
 
-.search
-	border-radius: 30px
-	padding: 12px 16px
-	background-color: #f2f3fb
-	border: none
-	width: 100%
-	font-size: 18px
-	&::placeholder
+		z-index: 3
+		background-color: #fff
+		left: -15px
+		top: 53px
+
+		// white-space: nowrap
+		animation: fade .35s ease-out
+		max-height: 0
+		overflow: hidden
+		transition: max-height .35s ease-out, padding .35s ease-out
+		+media-breakpoint-up(lg)
+			padding: 15px
+			max-height: initial
+			overflow: initial
+			display: none
+			position: absolute
+			border: 1px solid #d9d9d9
+			min-width: 346px
+		+media-breakpoint-up(xl)
+			top: 56px
+	/* .menu__sub-item */
+	&__sub-item
+		display: flex
+		align-items: flex-start
+		&:before
+			content: ''
+			display: block
+			height: 4px
+			width: 4px
+			flex: 0 0 4px
+			background-color: $text
+			border-radius: 50%
+			margin: 10px 8px 0 0
+		&:not(:last-child)
+			margin-bottom: 2px
+		+media-breakpoint-up(lg)
+			&:not(:last-child)
+				margin-bottom: 10px
+	&__sub-item_category
+		&:before
+			display: none
+	/* .menu__sub-link */
+	&__sub-link
+		font-weight: 400
+		line-height: 120%
+		color: $text
+		transfition: color .35s ease-out
+		display: inline-block
+		&:hover
+			color: $accent
+			text-decoration: none
+
+.menu-search-form
+	/* .menu-search-form__input */
+	&__input
+		border-radius: 30px
+		padding: 12px 16px
+		background-color: #f2f3fb
+		border: none
+		width: 100%
 		font-size: 18px
+		&::placeholder
+			font-size: 18px
 
 .callback-menu
 	border: 1px solid $accent
@@ -786,6 +987,198 @@ img
 		width: 28px
 	/* .calc-menu__text */
 	&__text
+		color: #fff
+
+.first
+	max-width: 1920px
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	/* .first__block */
+	&__block
+		position: absolute
+		z-index: 3
+		// max-width: 1440px
+		width: calc(100% - 20px)
+		top: 20px
+		+media-breakpoint-up(sm)
+			width: auto
+			top: 50px
+			left: calc(50% - 280px)
+		+media-breakpoint-up(lg)
+			left: auto
+		+media-breakpoint-up(wxp)
+			max-width: 1440px
+			width: calc(100% - 20px)
+	/* .first__block-row */
+	&__block-row
+		display: flex
+		align-items: flex-end
+		column-gap: 176px
+		row-gap: 32px
+		flex-wrap: wrap
+		margin-bottom: 50px
+		justify-content: center
+		+media-breakpoint-up(lg)
+			justify-content: flex-start
+		+media-breakpoint-up(wxp)
+			justify-content: space-between
+
+	/* .first__experience */
+	&__experience
+		display: none
+		+media-breakpoint-up(lg)
+			display: block
+			background: #fff
+			padding: 24px
+			border-radius: 12px
+	&__experience_mobile
+		display: block
+		margin-bottom: 16px
+		+media-breakpoint-up(lg)
+			display: none
+
+	/* .first__experience-title */
+	&__experience-title
+		font-weight: 700
+		font-size: 22px
+		line-height: 120%
+		color: #000
+		margin-bottom: 12px
+
+	/* .first__experience-text */
+	&__experience-text
+		max-width: 480px
+		ul
+			padding: 0
+			margin: 0
+			padding-left: 21px
+			list-style-type: square
+			li
+				font-weight: 400
+				font-size: 18px
+				line-height: 130%
+				color: #000
+				margin-bottom: 8px
+				&::marker
+					color: $accent
+	&__experience-text_mobile
+		max-width: 100%
+
+	/* .first__block-btn-row */
+	&__block-btn-row
+		display: flex
+		gap: 8px
+		flex-wrap: wrap
+		justify-content: center
+		+media-breakpoint-up(lg)
+			justify-content: flex-start
+	/* .first__block-btn */
+	&__block-btn
+		font-weight: 700
+		line-height: 100%
+		text-align: center
+		color: #fff
+		border-radius: 30px
+		padding: 16px 31px
+		background-color: $accent
+		align-items: center
+		border: 1px solid $accent
+		transition: background-color .35s ease-out, color .35s ease-out
+		display: none
+		+media-breakpoint-up(lg)
+			display: inline-flex
+		&:hover
+			text-decoration: none
+			background-color: transparent
+			color: $accent
+	&__block-btn_reverse
+		background-color: transparent
+		color: $accent
+		&:hover
+			background-color: $accent
+			color: #fff
+
+	&__block-btn_mobile
+		display: inline-flex
+		+media-breakpoint-up(lg)
+			display: none
+	/* .first__mobile-block */
+	&__mobile-block
+		text-align: center
+		padding: 30px 10px
+		border-bottom: 1px solid #d9d9d9
+		+media-breakpoint-up(lg)
+			display: none
+
+.first-slider-pagination
+	text-align: center
+	margin-top: 10px
+	+media-breakpoint-up(sm)
+		display: none
+
+.first-slider
+	/* .first-slider__btn */
+	&__btn
+		position: absolute
+		z-index: 3
+		bottom: 40px
+		right: 10px
+		+media-breakpoint-up(wxp)
+			right: calc(50% - (1440px / 2))
+	/* .first-slider__slide */
+	&__slide
+		position: relative
+		z-index: 1
+	/* .first-slider__slide-img */
+	&__slide-img
+		height: 100%
+		width: 100%
+		object-position: center
+		height: 390px
+		object-fit: cover
+		+media-breakpoint-up(sm)
+			height: 490px
+		+media-breakpoint-up(md)
+			height: 590px
+		+media-breakpoint-up(lg)
+			height: 690px
+		+media-breakpoint-up(xl)
+			height: 790px
+	/* .first-slider__slide-block */
+	&__slide-block
+		padding: 15px
+		background-color: rgba(0,0,0,.8)
+		position: absolute
+		bottom: 20px
+		z-index: 2
+		width: 340px
+		left: calc(50% - 170px)
+		+media-breakpoint-up(sm)
+			bottom: 40px
+			background-color: rgba(0,0,0,.5)
+			padding: 20px 25px
+			width: 360px
+			left: auto
+		+media-breakpoint-up(lg)
+
+	/* .first-slider__slide-block-title */
+	&__slide-block-title
+		font-weight: 700
+		font-size: 20px
+		line-height: 100%
+		color: #fff
+		margin-bottom: 15px
+		display: block
+		+media-breakpoint-up(sm)
+			margin-bottom: 20px
+		&:hover
+			text-decoration: none
+			color: #fff
+	/* .first-slider__slide-block-text */
+	&__slide-block-text
+		font-weight: 400
+		line-height: 140%
 		color: #fff
 
 .about
@@ -878,11 +1271,15 @@ img
 			margin-bottom: 25px
 		span
 			font-size: 40px
+		// +media-breakpoint-up(md)
+		// 	font-size: 40px
+		// 	span
+		// 		font-size: 70px
 		+media-breakpoint-up(md)
-			font-size: 40px
+			font-size: 36px
 			span
-				font-size: 70px
-		+media-breakpoint-up(lg)
+				font-size: 42px
+		+media-breakpoint-up(wxp)
 			font-size: 60px
 			span
 				font-size: 90px
@@ -895,7 +1292,21 @@ img
 
 .map
 	position: relative
-	background-color: #000
+	z-index: 1
+	&__overlay
+		position: absolute
+		z-index: 2
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		backdrop-filter: blur(10px)
+		background: rgba(0, 0, 0, 0.4)
+		display: none
+		animation: fade .35s ease
+		&.active
+			display: block
+	// background-color: #000
 	/* .map__title-row */
 	&__title-row
 		display: flex
@@ -904,6 +1315,7 @@ img
 		max-width: 1292px
 		gap: 12px
 		flex-wrap: wrap
+
 	/* .map__text */
 	&__text
 		line-height: 130%
@@ -947,9 +1359,12 @@ img
 		padding: 10px
 		max-width: 229px
 		position: absolute
+		z-index: 3
 		// top: 0
 		left: 0
 		display: none
+		top: 60px
+		left: calc( 50% - 115px )
 
 	&__item.active
 
@@ -957,13 +1372,15 @@ img
 	&__item-img
 		border-radius: 10px
 		margin-bottom: 20px
+		max-width: 209px
 
 	/* .map__item-title */
 	&__item-title
-		font-weight: 700
-		font-size: 20px
+		// font-weight: 700
+		font-size: 16px
 		line-height: 120%
 		margin-bottom: 12px
+		max-width: 209px
 	/* .map__item-power */
 	&__item-power
 		display: flex
@@ -985,13 +1402,19 @@ img
 		border: 1px solid $accent
 		width: 100%
 		display: inline-block
+		margin-bottom: 10px
 		border-radius: 30px
 		padding: 7.5px 60px
 		transition: background-color .35s ease-out, color .35s ease-out
+		max-width: 209px
 		&:hover
 			background-color: transparent
 			text-decoration: none
 			color: $accent
+
+.ymaps-2-1-79-b-cluster-tabs__menu
+	.map__item-img
+		max-width: 100%
 
 .title
 	font-weight: 700
@@ -1003,8 +1426,19 @@ img
 		font-size: 32px
 	+media-breakpoint-up(md)
 		font-size: 48px
+	&_first
+		font-size: 28px
+		line-height: 120%
+		text-align: center
+		+media-breakpoint-up(sm)
+			font-size: 48px
+		+media-breakpoint-up(md)
+			font-size: 54px
+		+media-breakpoint-up(lg)
+			text-align: left
 	&_single
 		margin-bottom: 28px
+		max-width: 1040px
 		+media-breakpoint-up(sm)
 			margin-bottom: 42px
 	&_mb
@@ -1034,6 +1468,8 @@ img
 			margin-right: 0
 	&_w670
 		max-width: 670px
+	&_w560
+		max-width: 560px
 	&_minw670
 		+media-breakpoint-up(lg)
 			min-width: 670px
@@ -1043,8 +1479,8 @@ img
 			margin-bottom: 30px
 	&_page
 		font-size: 32px
-		line-height: 1
-		position: absolute
+		// line-height: 1
+		// position: absolute
 		bottom: 30px
 		z-index: 1
 		margin: 0
@@ -1061,13 +1497,40 @@ img
 			margin-bottom: 30px
 			font-size: 36px
 
+.media-btn
+	cursor: pointer
+
+.media-content
+	display: none
+	&.active
+		display: block
+
+.media-item
+	text-decoration: none
+	color: $text
+	display: block
+	&:hover
+		text-decoration: none
+		color: $text
+
+.favorite-content
+	display: none
+	&.active
+		display: block
+
 .favorities
 	display: flex
 	flex-wrap: wrap
 	gap: 30px
+	row-gap: 12px
 	margin-bottom: 8px
+	/* .favorities__item-text */
+	&__item-text
+		position: relative
+		z-index: 1
 	/* .favorities__item */
 	&__item
+		cursor: pointer
 		font-weight: 700
 		font-size: 16px
 		line-height: 120%
@@ -1084,18 +1547,19 @@ img
 			text-decoration: none
 			color: #000
 		&.active
-			color: #000
-			position: relative
-			z-index: 1
-			&:after
-				content: ''
-				position: absolute
-				width: 100%
-				height: 1px
-				bottom: 0
-				left: 0
+			.favorities__item-text
+				color: #000
+				position: relative
 				z-index: 1
-				border-bottom: 1px dashed #000
+				&:after
+					content: ''
+					position: absolute
+					width: 100%
+					height: 1px
+					bottom: 0
+					left: 0
+					z-index: 1
+					border-bottom: 1px dashed #000
 
 .title-row
 	display: flex
@@ -1107,6 +1571,8 @@ img
 		margin-bottom: 30px
 	+media-breakpoint-up(md)
 		margin-bottom: 70px
+	&_map
+		align-items: center
 	&_facts
 		flex-direction: column
 		align-items: flex-start
@@ -1144,6 +1610,8 @@ img
 	/* .title-row__text */
 	&__text
 		max-width: 377px
+	&__text_map
+		max-width: 639px
 
 .slider-btn
 	display: none
@@ -1161,6 +1629,8 @@ img
 		background-color: #f2f3fb
 		&.swiper-button-disabled
 			opacity: 0.7
+		&.swiper-button-lock
+			opacity: 0
 	 /* .slider-btn__item_prev */
 	&__item_prev
 		transform: rotate(180deg)
@@ -1204,28 +1674,33 @@ img
 		position: relative
 		z-index: 2
 		background-color: #d9d9d9
+		&:last-child
+			.swiper-pagination-bullet-year
+				left: calc(50% - 30px)
 	.swiper-pagination-bullet-active
 		background-color: $accent
 		.swiper-pagination-bullet-year
 			display: block
 	.swiper-pagination-bullet-year
 		font-weight: 700
-		font-size: 16px
+		font-size: 12px
 		line-height: 120%
 		color: $accent
 		position: absolute
 		left: calc(50% - 15px)
-		top: calc(50% - 10px)
+		top: calc(50% - 20px)
 		background: #fff
 		display: none
 		+media-breakpoint-up(sm)
-			font-size: 20px
+			font-size: 16px
 			left: calc(50% - 22px)
-			top: calc(50% - 12px)
+			top: calc(50% - 25px)
 		+media-breakpoint-up(md)
-			font-size: 26px
-			left: calc(50% - 30px)
+			font-size: 20px
+			left: calc(50% - 50px)
 			top: calc(50% - 16px)
+		+media-breakpoint-up(lg)
+			font-size: 26px
 
 .swiper-pagination-bullet
 	background: #000
@@ -1340,6 +1815,9 @@ img
 		background-color: #fff
 		width: 100%
 		border: none
+		border: 1px solid transparent
+		&.error
+			background-color: #ffe1e1
 
 	/* .presentation__form-btn */
 	&__form-btn
@@ -1358,6 +1836,8 @@ img
 
 .video-block
 	position: relative
+	cursor: pointer
+	z-index: 1
 	/* .video-block__play */
 	&__play
 		height: 70px
@@ -1390,6 +1870,10 @@ img
 		width: 100%
 		object-fit: contain
 		border-radius: 12px
+	&__img_mh580
+		max-height: 400px
+		object-fit: cover
+		object-position: top
 
 .video-review-item
 	&:hover
@@ -1400,15 +1884,16 @@ img
 	&__img-block
 		margin-bottom: 20px
 		position: relative
-		height: 180px
+		// height: 180px
 		+media-breakpoint-up(sm)
-			height: 325px
+			// height: 325px
 	/* .video-review-item__img */
 	&__img
 		border-radius: 12px
 		height: 100%
 		width: 100%
 		object-fit: cover
+		aspect-ratio: 4/3
 	/* .video-review-item__play */
 	&__play
 		height: 60px
@@ -1463,7 +1948,7 @@ img
 	position: relative
 
 .news-slider
-	border: 1px solid #d9d9d9
+	outline: 1px solid #d9d9d9
 	border-radius: 12px
 	.news-item
 		border-radius: 0
@@ -1472,6 +1957,18 @@ img
 	&__wrapper
 	/* .news-slider__slide */
 	&__slide
+		// .news-item__title
+		// 	overflow: hidden
+		// 	min-height: 66px
+		// 	max-height: 66px
+		// 	+media-breakpoint-up(sm)
+		// 		min-height: 80px
+		// 		max-height: 80px
+		// .news-item__text
+		// 	max-height: 108px
+		// 	min-height: 108px
+		// 	overflow: hidden
+
 		&:not(:last-child)
 			.news-item
 				border-right: 1px solid #d9d9d9
@@ -1507,6 +2004,19 @@ img
 		gap: 42px
 	&_mb0
 		margin-bottom: 0
+	&__flex
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+		row-gap: 30px
+	&__col
+		padding: 0 15px
+		width: 100%
+		+media-breakpoint-up(sm)
+			width: 50%
+		+media-breakpoint-up(lg)
+			width: 33.333%
+
 	&__row
 		display: flex
 		flex-direction: column
@@ -1518,6 +2028,7 @@ img
 			flex-direction: row
 		.news-item
 			+media-breakpoint-up(sm)
+				width: 33.333%
 				border-radius: 0
 				border: none
 				&:not(:last-child)
@@ -1527,6 +2038,9 @@ img
 	padding: 12px
 	border: 1px solid #d9d9d9
 	border-radius: 8px
+	display: block
+	&:hover
+		text-decoration: none
 	+media-breakpoint-up(sm)
 		// min-width: 479px
 		border-radius: 12px
@@ -1539,6 +2053,10 @@ img
 		width: 100%
 		border-radius: 8px
 		margin-bottom: 10px
+		max-height: 282px
+		aspect-ratio: 4/3
+		object-fit: cover
+		object-position: center
 		+media-breakpoint-up(md)
 			border-radius: 10px
 			margin-bottom: 20px
@@ -1554,11 +2072,17 @@ img
 		font-size: 18px
 		line-height: 120%
 		margin-bottom: 8px
+		color: $text
+		display: block
+		&:hover
+			text-decoration: none
+			color: $text
 		+media-breakpoint-up(sm)
 			margin-bottom: 12px
 			font-size: 20px
 		+media-breakpoint-up(md)
 			font-size: 22px
+			min-height: 80px
 	/* .news-item__text */
 	&__text
 		color: #666
@@ -1625,10 +2149,179 @@ img
 		+media-breakpoint-up(lg)
 			font-size: 16px
 			padding: 13px 19px
+	&__btn_w100
+		width: 100%
 	&__btn_red
 		background-color: $accent
 		color: #fff
 		border-color: $accent
+	/* .news-item__serial-type */
+	&__serial-type
+		display: flex
+		flex-wrap: wrap
+		gap: 8px
+		margin-top: 12px
+		padding-top: 12px
+		border-top: 1px solid #d9d9d9
+
+	/* .news-item__serial-type-title */
+	&__serial-type-title
+		font-size: 16px
+		line-height: 130%
+		color: #666
+
+	/* .news-item__serial-type-item */
+	&__serial-type-item
+		font-size: 16px
+		line-height: 130%
+		color: #000
+		&:not(:last-child)
+			&:after
+				content: '/'
+				margin-left: 8px
+				color: #d9d9d9
+
+.blog-page
+	margin-bottom: 40px
+	/* .blog-page__row */
+	&__row
+		display: flex
+		flex-direction: column
+		row-gap: 30px
+		+media-breakpoint-up(lg)
+			margin: 0 -10px
+			row-gap: 0
+			flex-direction: row
+	/* .blog-page__left */
+	&__left
+		flex: 0 0 33.333%
+		+media-breakpoint-up(lg)
+			padding: 0 10px
+		+media-breakpoint-up(xl)
+			flex: 0 0 25%
+
+	/* .blog-page__right */
+	&__right
+		flex: 0 0 67.7777%
+		+media-breakpoint-up(lg)
+			padding: 0 10px
+		+media-breakpoint-up(xl)
+			flex: 0 0 75%
+	/* .blog-page__categories */
+	&__categories
+		background-color: #f2f3fb
+		border: 2px solid #f2f3fb
+		border-radius: 12px
+		padding: 24px
+		// margin-bottom: 40px
+		position: sticky
+		top: 200px
+
+	/* .blog-page__categories-item */
+	&__categories-item
+		display: flex
+		align-items: center
+		justify-content: space-between
+		font-weight: 400
+		font-size: 18px
+		line-height: 130%
+		color: #000
+		transition: color .35s ease-out
+		&:not(:last-child)
+			margin-bottom: 25px
+		&:hover
+			text-decoration: none
+			color: $accent
+		&.active
+			color: $accent
+
+	/* .blog-page__categories-item-svg */
+	&__categories-item-svg
+		width: 25px
+		height: 24px
+		flex: 0 0 25px
+
+	/* .blog-page__video-block */
+	&__video-block
+
+	/* .blog-page__video-title */
+	&__video-title
+		font-weight: 700
+		font-size: 22px
+		line-height: 100%
+		color: #000
+		margin-bottom: 24px
+	/* .blog-page__video-item */
+	&__video-item
+		display: flex
+		gap: 12px
+		&:hover
+			text-decoration: none
+			.blog-page__video-item-title
+				color: #000
+
+	/* .blog-page__video-item-img */
+	&__video-item-img
+		max-width: 60px
+		max-height: 60px
+		border-radius: 8px
+		object-fit: cover
+
+	/* .blog-page__video-item-title */
+	&__video-item-title
+		font-weight: 400
+		font-size: 18px
+		line-height: 130%
+		color: #666
+		transition: color .35s ease-out
+	/* .blog-page__items-col */
+	&__items-col
+		flex: 0 0 100%
+		+media-breakpoint-up(sm)
+			padding: 0 10px
+			flex: 0 0 50%
+		+media-breakpoint-up(xl)
+			flex: 0 0 33.333%
+
+	/* .blog-page__items-row */
+	&__items-row
+		display: flex
+		flex-wrap: wrap
+		row-gap: 30px
+		+media-breakpoint-up(sm)
+			margin: 0 -10px
+
+.blog-page-item
+	text-decoration: none
+	&:hover
+		text-decoration: none
+	/* .blog-page-item__date */
+	&__date
+		font-weight: 400
+		font-size: 18px
+		line-height: 130%
+		color: rgba(0, 0, 0, 0.5)
+		margin-bottom: 12px
+	/* .blog-page-item__title */
+	&__title
+		font-weight: 400
+		font-size: 18px
+		line-height: 150%
+		color: #000
+		margin-bottom: 20px
+	/* .blog-page-item__link */
+	&__link
+		font-size: 14px
+		color: $accent
+		display: flex
+		align-items: center
+		gap: 6px
+		+media-breakpoint-up(sm)
+			font-size: 16px
+	/* .blog-page-item__link-svg */
+	&__link-svg
+		width: 25px
+		height: 24px
 
 .history-slider-btn
 	+media-breakpoint-up(sm)
@@ -1715,6 +2408,8 @@ img
 		z-index: 3
 		top: 30px
 		left: 30px
+		max-width: 200px
+		height: 165px
 		+media-breakpoint-up(sm)
 			right: 30px
 			left: auto
@@ -1736,7 +2431,8 @@ img
 	&__col
 		flex: 0 0 calc(50% - 6px)
 		+media-breakpoint-up(sm)
-			flex: 0 0 275px
+			flex: auto
+			// flex: 0 0 275px
 	/* .facts__number */
 	&__number
 		font-weight: 700
@@ -1754,6 +2450,8 @@ img
 	&__text
 
 .staff
+	max-width: 1920px
+	margin: 0 auto
 	/* .staff__title */
 	&__title
 		font-weight: 700
@@ -1762,6 +2460,25 @@ img
 		+media-breakpoint-up(sm)
 			margin-bottom: 40px
 			font-size: 22px
+	/* .staff__row */
+	&__row
+		display: flex
+		flex-wrap: wrap
+		row-gap: 16px
+		margin: 0 -8px
+
+	/* .staff__col */
+	&__col
+		padding: 0 8px
+		flex: 0 0 50%
+		+media-breakpoint-up(sm)
+			flex: 0 0 33.3333%
+		+media-breakpoint-up(md)
+			flex: 0 0 25%
+		+media-breakpoint-up(lg)
+			flex: 0 0 20%
+		+media-breakpoint-up(xl)
+			flex: 0 0 16.6667%
 
 .staff-slider-block
 	padding: 0 10px
@@ -1772,6 +2489,10 @@ img
 	+media-breakpoint-up(lg)
 		&:not(:last-child)
 			margin-bottom: 50px
+	&.mob
+		display: block
+		+media-breakpoint-up(sm)
+			display: none
 	&.mob-none
 		display: none
 		+media-breakpoint-up(sm)
@@ -1785,6 +2506,9 @@ img
 	&__slide
 
 .staff-item
+	display: block
+	&:hover
+		text-decoration: none
 	/* .staff-item__img-block */
 	&__img-block
 		margin-bottom: 14px
@@ -1792,6 +2516,9 @@ img
 	&__img
 		border-radius: 10px
 		width: 100%
+		max-height: 242px
+		object-fit: cover
+		object-position: top
 		+media-breakpoint-up(sm)
 			border-radius: 20px
 		+media-breakpoint-up(lg)
@@ -1801,9 +2528,11 @@ img
 	&__position
 		font-size: 14px
 		font-style: italic
+		color: $text
 	/* .staff-item__name */
 	&__name
 		font-weight: 700
+		color: $text
 		font-size: 16px
 		line-height: 120%
 
@@ -1937,12 +2666,17 @@ img
 		margin-left: auto
 		margin-right: auto
 		border-radius: 10px
+		max-width: 220px
 		+media-breakpoint-up(sm)
 			margin-bottom: 40px
+		+media-breakpoint-up(md)
+			max-width: 100%
 	/* .review-item__title */
 	&__title
 		line-height: 130%
 		transition: color .35s ease-out
+		max-height: 46px
+		overflow: hidden
 
 .consult
 	/* .consult__row */
@@ -1953,7 +2687,7 @@ img
 	/* .consult__left */
 	&__left
 		+media-breakpoint-up(lg)
-			flex: 0 1 450px
+			flex: 0 1 740px
 			margin-right: 30px
 		+media-breakpoint-up(xl)
 			margin-right: 74px
@@ -2022,6 +2756,9 @@ img
 		width: 100%
 		padding: 18px 16px
 		border: none
+		border: 1px solid transparent
+		&.error
+			background-color: #ffe1e1
 	/* .consult-form__btn-row */
 	&__btn-row
 		display: flex
@@ -2070,6 +2807,9 @@ img
 			flex-wrap: nowrap
 	/* .footer__col */
 	&__col
+		max-width: 320px
+	&__col_30
+		flex: 0 0 30%
 
 	/* .footer__title */
 	&__title
@@ -2172,10 +2912,18 @@ a.footer__bottom-item
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%)
 		+media-breakpoint-up(sm)
 			height: 180px
+	/* .page-bg__block */
+	&__block
+		position: absolute
+		z-index: 1
+		bottom: 40px
 	/* .page-bg__img */
 	&__img
 		min-height: 300px
 		object-fit: cover
+		width: 100%
+		max-height: 530px
+		object-position: 0 65%
 
 .products
 	/* .products__row */
@@ -2199,6 +2947,10 @@ a.footer__bottom-item
 		+media-breakpoint-up(lg)
 			flex: 0 0 calc( 50% - 15px )
 			max-width: calc( 50% - 15px )
+		.products-item__text
+			min-height: 80px
+			max-height: 80px
+			overflow: hidden
 	&__col_33
 		+media-breakpoint-up(md)
 			flex: 0 0 calc( 50% - 6px )
@@ -2209,6 +2961,10 @@ a.footer__bottom-item
 		+media-breakpoint-up(xl)
 			flex: 0 0 calc( 33.333% - 20px )
 			max-width: calc( 33.333% - 20px )
+		.products-item__text
+			min-height: 80px
+			max-height: 80px
+			overflow: hidden
 
 .products-item
 	height: 364px
@@ -2247,21 +3003,32 @@ a.footer__bottom-item
 		position: relative
 		z-index: 2
 
-	/* .products-item__manager */
-	&__manager
+	/* .products-item__manager-item */
+	&__manager-item
 		display: flex
 		align-items: center
 		justify-content: space-between
 		gap: 10px
-		max-width: 374px
+	/* .products-item__manager */
+	&__manager
+		display: inline-flex
+		align-items: center
+		justify-content: space-between
+		gap: 10px
+		// max-width: 374px
 		border: 1px solid #fff
 		border-radius: 60px
-		padding-right: 12px
+		padding: 12px
 		+media-breakpoint-up(sm)
 			gap: 20px
 	/* .products-item__manager-img */
 	&__manager-img
 		border-radius: 50%
+		max-height: 74px
+		max-width: 74px
+		width: 74px
+		object-fit: cover
+		object-position: top
 	/* .products-item__manager-text */
 	&__manager-text
 
@@ -2303,6 +3070,8 @@ a.footer__bottom-item
 		z-index: 2
 		// bottom: -110px
 		transition: bottom .35s ease-out
+		&:hover
+			text-decoration: none
 		+media-breakpoint-up(sm)
 			bottom: -130px
 
@@ -2317,7 +3086,7 @@ a.footer__bottom-item
 		+media-breakpoint-up(sm)
 			font-size: 32px
 			margin-bottom: 88px
-			min-height: 76px
+			min-height: 130px
 		+media-breakpoint-up(xl)
 			font-size: 36px
 	/* .products-item__text */
@@ -2416,6 +3185,9 @@ a.footer__bottom-item
 		background-color: #fff
 		width: 100%
 		border: none
+		border: 1px solid transparent
+		&.error
+			background-color: #ffe1e1
 	&__textarea
 		height: 170px
 		+media-breakpoint-up(lg)
@@ -2614,6 +3386,10 @@ a.footer__bottom-item
 	/* .team-single__img */
 	&__img
 		border-radius: 12px
+		width: 100%
+		object-fit: cover
+		object-position: top
+		max-height: 390px
 	/* .team-single__right */
 	&__right
 		flex: 1 0 320px
@@ -2690,14 +3466,15 @@ a.footer__bottom-item
 		display: flex
 		gap: 30px
 		flex-direction: column
-		+media-breakpoint-up(md)
+		+media-breakpoint-up(lg)
 			flex-direction: row
 		+media-breakpoint-up(xl)
 			gap: 70px
 
 	/* .single-video__left */
 	&__left
-		+media-breakpoint-up(md)
+		min-width: 1px
+		+media-breakpoint-up(lg)
 			flex: 0 0 50%
 		+media-breakpoint-up(xl)
 			flex: 0 0 703px
@@ -2748,9 +3525,9 @@ a.footer__bottom-item
 			color: $accent
 	/* .single-video__right */
 	&__right
+		min-width: 1px
 
 .calc-form
-	margin-top: 70px
 	display: flex
 	align-items: center
 	justify-content: space-between
@@ -2772,8 +3549,6 @@ a.footer__bottom-item
 		line-height: 120%
 		+media-breakpoint-up(sm)
 			font-size: 26px
-		+media-breakpoint-up(lg)
-			font-size: 36px
 	/* .calc-form__btn */
 	&__btn
 		font-weight: 700
@@ -2823,6 +3598,7 @@ a.footer__bottom-item
 	/* .steps-offer__right */
 	&__right
 		display: flex
+		align-items: center
 		flex-wrap: wrap
 		gap: 20px
 		+media-breakpoint-up(md)
@@ -2876,6 +3652,13 @@ a.footer__bottom-item
 	/* .step-item__content */
 	&__content
 		margin-top: 10px
+		h3
+			font-weight: 700
+			font-size: 18px
+			line-height: 120%
+			margin-bottom: 6px
+			+media-breakpoint-up(md)
+				font-size: 22px
 		+media-breakpoint-up(md)
 			margin-top: 20px
 	/* .step-item__title */
@@ -2921,7 +3704,8 @@ a.footer__bottom-item
 		background-attachment: fixed
 		height: 320px
 		background-repeat: no-repeat
-		background-position: center
+		background-position: top
+		background-size: cover
 		margin-top: 40px
 		+media-breakpoint-up(sm)
 			margin-top: 70px
@@ -2968,6 +3752,9 @@ a.footer__bottom-item
 		justify-content: space-between
 		gap: 10px
 		flex-direction: column
+		text-decoration: none
+		&:hover
+			text-decoration: none
 		+media-breakpoint-up(sm)
 			gap: 30px
 			flex-direction: row
@@ -2989,6 +3776,8 @@ a.footer__bottom-item
 	&__title
 	/* .service-slider__text */
 	&__text
+		color: $text
+		text-decoration: none
 
 .service-slider-pagination
 
@@ -3117,23 +3906,39 @@ a.footer__bottom-item
 		+media-breakpoint-up(lg)
 			margin: 0 -10px
 			flex-direction: row
-		+media-breakpoint-up(wxp)
+		+media-breakpoint-up(xl)
 			margin: 0 -15px
+		+media-breakpoint-up(wxp)
+			margin: 0 -35px
 	/* .single-news__left */
 	&__left
 		min-width: 1px
 		+media-breakpoint-up(lg)
 			flex: 0 0 75%
 			padding: 0 10px
-		+media-breakpoint-up(wxp)
+		+media-breakpoint-up(xl)
 			padding: 0 15px
+		+media-breakpoint-up(wxp)
+			flex: 0 0 1103px
+			padding: 0 35px
 	/* .single-news__right */
 	&__right
 		+media-breakpoint-up(lg)
 			flex: 0 0 25%
 			padding: 0 10px
-		+media-breakpoint-up(wxp)
+		+media-breakpoint-up(xl)
 			padding: 0 15px
+		+media-breakpoint-up(wxp)
+			flex: 1
+			padding: 0 35px
+	/* .single-news__img */
+	&__img
+		width: 100%
+		border-radius: 8px
+		margin-bottom: 30px
+		+media-breakpoint-up(sm)
+			border-radius: 12px
+			margin-bottom: 70px
 
 .single-simple-slider
 	margin-bottom: 30px
@@ -3175,8 +3980,12 @@ a.footer__bottom-item
 	/* .single-sidebar-items__row */
 	&__row
 		display: flex
-		gap: 24px
+		gap: 8px
 		flex-wrap: wrap
+		flex-direction: column
+		+media-breakpoint-up(sm)
+			gap: 24px
+			flex-direction: row
 		+media-breakpoint-up(lg)
 			flex-direction: column
 	/* .single-sidebar-items__item */
@@ -3184,13 +3993,18 @@ a.footer__bottom-item
 
 	/* .single-sidebar-items__title */
 	&__title
+		display: inline
 		color: #666
-		margin-bottom: 4px
-		+media-breakpoint-up(lg)
-			margin-bottom: 12px
+		margin-right: 4px
+		+media-breakpoint-up(sm)
+			display: block
+			margin-right: 0
 
 	/* .single-sidebar-items__text */
 	&__text
+		display: inline
+		+media-breakpoint-up(sm)
+			display: block
 	/* .single-sidebar-items__btns */
 	&__btns
 		margin-top: 30px
@@ -3254,6 +4068,10 @@ a.footer__bottom-item
 	/* .single-sidebar-team__img */
 	&__img
 		border-radius: 50%
+		max-height: 60px
+		max-width: 60px
+		object-fit: cover
+		object-position: top
 
 	/* .single-sidebar-team__block */
 	&__block
@@ -3327,6 +4145,7 @@ a.footer__bottom-item
 		border-radius: 8px
 		opacity: 0.7
 		cursor: pointer
+		overflow: hidden
 		+media-breakpoint-up(sm)
 			border-radius: 12px
 		&.swiper-slide-thumb-active
@@ -3343,6 +4162,38 @@ a.footer__bottom-item
 		height: 451px
 	/* .single-big-slider__slide */
 	&__slide
+	&__slide_video
+		position: relative
+		z-index: 1
+		cursor: pointer
+
+	/* .single-big-slider__slide-play */
+	&__slide-play
+		height: 60px
+		width: 60px
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50%
+		background-color: #BC0612
+		position: absolute
+		top: calc( 50% - 30px )
+		left: calc( 50% - 30px )
+		+media-breakpoint-up(sm)
+			height: 80px
+			width: 80px
+			top: calc( 50% - 40px )
+			left: calc( 50% - 40px )
+	/* .single-big-slider__slide-play-svg */
+	&__slide-play-svg
+		width: 20px
+		flex: 0 0 20px
+		height: 20px
+		margin-left: 4px
+		+media-breakpoint-up(sm)
+			width: 25px
+			flex: 0 0 25px
+			height: 34px
 
 	/* .single-big-slider__img */
 	&__img
@@ -3364,6 +4215,40 @@ a.footer__bottom-item
 	z-index: 10
 	top: calc(50% - 28px)
 	right: 15px
+
+.product-big-slider
+	margin-bottom: 24px
+	/* .product-big-slider__slide */
+	&__slide
+		background-color: #fff
+		text-align: center
+		border-radius: 5px
+	/* .product-big-slider__img */
+	&__img
+		border-radius: 12px
+		+media-breakpoint-up(md)
+			object-fit: cover
+			min-height: 463px
+			border-radius: 30px
+
+.product-thumb-slider
+	/* .product-thumb-slider__slide */
+	&__slide
+		// max-width: 150px
+		// max-height: 98px
+		display: flex
+		align-items: center
+		background-color: #fff
+		border-radius: 12px
+		border: 1px solid transparent
+		cursor: pointer
+		&.swiper-slide-thumb-active
+			border-color: $accent
+	/* .product-thumb-slider__img */
+	&__img
+		border-radius: 12px
+		// max-width: 150px
+		// max-height: 98px
 
 .review-single
 	padding: 22px
@@ -3483,6 +4368,8 @@ a.footer__bottom-item
 		padding: 20px
 		height: 100%
 		+media-breakpoint-up(sm)
+			padding: 20px 15px
+		+media-breakpoint-up(wxp)
 			padding: 30px
 	/* .contact-centra	l__item-svg */
 	&__item-svg
@@ -3644,6 +4531,8 @@ a.footer__bottom-item
 		+media-breakpoint-up(lg)
 			gap: 0
 			flex-direction: row
+			flex-wrap: wrap
+			row-gap: 30px
 			margin: 0 -15px
 	/* .rekviziti__col */
 	&__col
@@ -3728,12 +4617,42 @@ a.footer__bottom-item
 		width: 25px
 		height: 24px
 
+.request-item
+	background-color: #f2f3fb
+	transition: background-color .35s ease-out
+	display: flex
+	cursor: pointer
+	justify-content: space-between
+	align-items: center
+	padding: 15px
+	gap: 6px
+	border-radius: 12px
+	font-weight: 700
+	line-height: 120%
+	font-size: 16px
+	color: #000!important
+	text-decoration: none!important
+	display: flex
+	align-items: center
+	&:hover
+		background-color: #d1d4ec
+		color: #000
+		text-decoration: none
+	+media-breakpoint-up(sm)
+		padding: 22px 30px
+	+media-breakpoint-up(md)
+		font-size: 18px
+	+media-breakpoint-up(lg)
+		font-size: 22px
+
 .qa-item
 	margin-left: auto
 	margin-right: auto
 	margin-bottom: 10px
 	position: sticky
 	border: 1px solid #D9D9D9
+	border-radius: 12px
+	overflow: hidden
 	&:hover
 		.qa-item__title-block
 			background-color: #d1d4ec
@@ -3753,6 +4672,8 @@ a.footer__bottom-item
 		align-items: center
 		padding: 15px
 		gap: 6px
+		border-top-left-radius: 12px
+		border-top-right-radius: 12px
 		+media-breakpoint-up(sm)
 			padding: 22px 30px
 	/* .qa-item__title */
@@ -3794,6 +4715,471 @@ a.footer__bottom-item
 		max-width: 900px
 		+media-breakpoint-up(sm)
 			padding-left: 30px
+
+#modal-success
+	align-items: center
+
+.modal
+	position: fixed
+	z-index: 10
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	backdrop-filter: blur(15px)
+	background: rgba(28, 21, 31, 0.4)
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	overflow-y: scroll
+	display: none
+	+media-breakpoint-up(lg)
+		@media screen and ( min-height: 600px )
+			align-items: center
+	&.open
+		opacity: 1
+		display: flex
+		transition: opacity 300ms
+	&_search
+		align-items: center
+		.modal__content
+			width: 90%
+	&_video
+		align-items: center
+
+	/* .modal__block */
+	&__block
+		background-color: #1c151f
+		padding: 50px 16px
+		max-width: 959px
+		width: 100%
+		position: relative
+		z-index: 1
+		border-radius: 12px
+		+media-breakpoint-up(sm)
+			padding: 50px
+	&__block_success
+		.modal__title, .modal__subtitle
+			text-align: center
+	&__block_w700
+		max-width: 700px
+	/* .modal__close */
+	&__close
+		height: 32px
+		width: 32px
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		z-index: 20
+		right: 20px
+		top: 20px
+		cursor: pointer
+	/* .modal__close-svg */
+	&__close-svg
+		height: 14px
+		width: 14px
+		fill: #E0E0E0
+	/* .modal__title */
+	&__title
+		font-weight: 400
+		font-size: 25px
+		color: #fff
+		margin-bottom: 15px
+		line-height: 120%
+		+media-breakpoint-up(md)
+			font-size: 34px
+		+media-breakpoint-up(lg)
+			font-size: 40px
+	/* .modal__subtitle */
+	&__subtitle
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		margin-bottom: 35px
+	/* .modal__success */
+	&__success
+		display: block
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 40px
+	/* .modal__success-block */
+	&__success-block
+		position: absolute
+		z-index: 2
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #1c151f
+		display: none
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		border-radius: 12px
+		&.active
+			display: flex
+
+.search-item
+	color: $text
+	margin-bottom: 30px
+	display: block
+	text-decoration: none
+	&:hover
+		text-decoration: none
+		p
+			color: $text
+	&__title
+		color: $text
+		font-size: 24px
+		line-height: 36px
+		margin-bottom: 10px
+	&__text
+		font-size: 16px
+		color: $text
+		margin-bottom: 10px
+	&__link
+		color: $accent
+
+.search-form
+	display: flex
+	align-items: center
+	flex-direction: column
+	position: relative
+	+media-breakpoint-up(sm)
+		flex-direction: row
+	&_page
+		margin-bottom: 30px
+	&__input
+		flex: 1
+		width: 100%
+		margin-bottom: 10px
+		font-size: 16px
+		line-height: 16px
+		color: #787878
+		padding: 13px 20px
+		background-color: transparent
+		border: none
+		border-bottom: 1px solid #787878
+		&::placeholder
+			font-size: 16px
+			line-height: 26px
+			color: #787878
+		&:focus
+			outline: 0
+		+media-breakpoint-up(sm)
+			margin-right: 10px
+			margin-bottom: 0
+	&__input_modal
+		background-color: transparent
+		border: none
+		border-bottom: 1px solid #fff
+		color: #fff
+		font-size: 20px
+		padding: 20px 10px
+		margin: 0
+		&::placeholder
+			color: #fff
+			font-size: 20px
+		+media-breakpoint-up(sm)
+			font-size: 24px
+			padding: 20px
+			&::placeholder
+				font-size: 24px
+	&__btn
+		width: 100%
+		height: 50px
+		border: none
+		background-color: $accent
+		color: #fff
+		border: 1px solid $accent
+		font-size: 14px
+		line-height: 16px
+		text-transform: uppercase
+		transition: background-color .25s ease-out
+		position: absolute
+		width: 50px
+		right: 0
+		background: transparent
+		border: none
+		height: 100%
+		+media-breakpoint-up(sm)
+			width: 100px
+		&:focus
+			outline: 0
+		&:hover
+			background-color: transparent
+		+media-breakpoint-up(sm)
+			flex: 0 0 200px
+	&__btn_modal
+		position: absolute
+		width: 50px
+		right: 0
+		background: transparent
+		border: none
+		height: 100%
+		+media-breakpoint-up(sm)
+			width: 100px
+	&__btn-svg
+		height: 25px
+		width: 25px
+		fill: #fff
+		transition: fill .25s ease-out
+		&:hover
+			fill: $accent
+		+media-breakpoint-up(sm)
+			height: 30px
+			width: 30px
+	&__btn-svg_page
+		fill: #787878
+
+.products-where
+	display: flex
+	gap: 6px
+	flex-wrap: wrap
+	margin-bottom: 24px
+	/* .products-where__item */
+	&__item
+		border-radius: 20px
+		padding: 6px 12px
+		background-color: #f2f3fb
+		font-size: 16px
+
+.products-specification
+	border: 1px solid #d9d9d9
+	border-radius: 30px
+	padding: 0 24px
+	margin-bottom: 24px
+	/* .products-specification__item */
+	&__item
+		padding: 24px 0
+		&:not(:last-child)
+			border-bottom: 1px solid #d9d9d9
+
+	/* .products-specification__title */
+	&__title
+		font-weight: 700
+		font-size: 16px
+		margin-bottom: 12px
+	/* .products-specification__items */
+	&__items
+		display: flex
+		flex-wrap: wrap
+		row-gap: 12px
+		column-gap: 12px
+		+media-breakpoint-up(sm)
+			column-gap: 0px
+
+	/* .products-specification__items-item */
+	&__items-item
+		font-size: 16px
+		+media-breakpoint-up(sm)
+			flex: 0 0 33.333%
+
+.company-facts
+	max-width: 1920px
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	/* .company-facts__row */
+	&__row
+		+media-breakpoint-up(md)
+			display: flex
+			margin: 0 -10px
+	/* .company-facts__col */
+	&__col
+		margin-bottom: 30px
+		+media-breakpoint-up(md)
+			margin-bottom: 0
+			flex: 0 0 33.3333%
+			padding: 0 10px
+
+	/* .company-facts__item */
+	&__item
+		+media-breakpoint-up(xl)
+			padding: 0px 30px 0 30px
+
+	/* .company-facts__item-number */
+	&__item-number
+		font-weight: 700
+		font-size: 20px
+		line-height: 120%
+		color: #000
+		width: 60px
+		height: 38px
+		background-color: #f2f3fb
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 25px
+		+media-breakpoint-up(sm)
+			font-size: 26px
+
+	/* .company-facts__item-title */
+	&__item-title
+		font-weight: 700
+		font-size: 20px
+		line-height: 120%
+		color: #000
+		margin-bottom: 40px
+		+media-breakpoint-up(sm)
+			font-size: 26px
+		+media-breakpoint-up(md)
+			max-width: 355px
+
+	/* .company-facts__item-content */
+	&__item-content
+		ul
+			padding: 0
+			margin: 0
+			padding-left: 21px
+			list-style-type: square
+			li
+				font-weight: 400
+				font-size: 18px
+				line-height: 130%
+				color: #000
+				&::marker
+					color: $accent
+
+	/* .company-facts__item-list */
+	&__item-list
+		padding: 0
+		margin: 0
+		padding-left: 21px
+		list-style-type: square
+
+	/* .company-facts__item-list-item */
+	&__item-list-item
+		font-weight: 400
+		font-size: 18px
+		line-height: 130%
+		color: $accent
+		span
+			color: #000
+	/* .company-facts__block */
+	&__block
+		color: #fff
+		background-color: #000
+		position: absolute
+		bottom: 16px
+		width: 230px
+		padding: 18px 12px
+		+media-breakpoint-up(sm)
+			bottom: 30px
+			padding: 26px 20px
+			width: 300px
+		+media-breakpoint-up(md)
+			bottom: 50px
+			padding: 36px 30px
+			width: 365px
+	/* .company-facts__count */
+	&__count
+		font-size: 34px
+		line-height: 34px
+		margin-bottom: 6px
+		font-weight: 700
+		+media-breakpoint-up(sm)
+			font-size: 54px
+			line-height: 54px
+		+media-breakpoint-up(md)
+			font-size: 100px
+			line-height: 100px
+	/* .company-facts__count-text */
+	&__count-text
+		font-weight: 700
+		font-size: 16px
+		line-height: 130%
+		color: #fff
+		+media-breakpoint-up(sm)
+			font-size: 18px
+		+media-breakpoint-up(md)
+			font-size: 20px
+
+.btn-modal
+	cursor: pointer
+
+.modal-form
+	/* .modal-form__title */
+	&__title
+		font-weight: 700
+		font-size: 24px
+		line-height: 120%
+		color: #fff
+		margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			margin-bottom: 40px
+			font-size: 32px
+		+media-breakpoint-up(md)
+			font-size: 36px
+	/* .modal-form__row */
+	&__row
+		margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			margin-bottom: 50px
+			display: flex
+			flex-wrap: wrap
+			gap: 20px
+		+media-breakpoint-up(md)
+			gap: 30px
+	/* .modal-form__col */
+	&__col
+		+media-breakpoint-up(sm)
+			flex: 0 0 calc(50% - 10px)
+		+media-breakpoint-up(md)
+			flex: 0 0 calc(50% - 15px)
+	/* .modal-form__label */
+	&__label
+		width: 100%
+		margin-bottom: 18px
+		+media-breakpoint-up(sm)
+			margin-bottom: 24px
+	/* .modal-form__label-text */
+	&__label-text
+		font-size: 16px
+		line-height: 130%
+		color: #fff
+		margin-bottom: 14px
+	/* .modal-form__input */
+	&__input
+		border-radius: 3px
+		background-color: #fff
+		width: 100%
+		padding: 18px 16px
+		border: none
+		border: 1px solid transparent
+		&.error
+			background-color: #ffe1e1
+	/* .modal-form__btn-row */
+	&__btn-row
+		display: flex
+		gap: 20px
+		flex-direction: column-reverse
+		+media-breakpoint-up(sm)
+			align-items: center
+			flex-direction: row
+	/* .modal-form__btn */
+	&__btn
+		font-weight: 700
+		color: #fff
+		background-color: $accent
+		border: 1px solid $accent
+		padding: 11px 35px
+		border-radius: 30px
+		transition: background-color .35s ease-out
+		&:hover
+			background-color: transparent
+
+	/* .modal-form__btn-text */
+	&__btn-text
+		color: #fff
+		font-size: 16px
+		line-height: 130%
+		max-width: 322px
+		flex: 1
+		a
+			color: #fff
 
 @keyframes "fade"
 	from
