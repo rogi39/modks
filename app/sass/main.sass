@@ -1,5 +1,10 @@
 @import config
 
+.smart-captcha
+	max-width: 300px
+	margin-bottom: 30px
+	height: 102px
+
 .noscroll
 	overflow: hidden
 
@@ -649,6 +654,9 @@ img
 		gap: 12px
 	&:hover
 		text-decoration: none
+		.contacts-item__text
+			color: $accent
+			border-color: $accent
 	&_single
 		margin-bottom: 8px
 		.contacts-item__text
@@ -691,6 +699,7 @@ img
 			font-weight: 700
 			line-height: 100%
 			color: $text
+			transition: color .35s ease-out, border-color .35s ease-out
 	&__text_director
 		border-bottom: 1px dashed $text
 	&__text_phone
@@ -2919,11 +2928,13 @@ a.footer__bottom-item
 		bottom: 40px
 	/* .page-bg__img */
 	&__img
-		min-height: 300px
+		// min-height: 300px
 		object-fit: cover
 		width: 100%
-		max-height: 530px
-		object-position: 0 65%
+		max-height: 780px
+		object-position: 80% 65%
+		+media-breakpoint-up(sm)
+			object-position: 0 65%
 
 .products
 	/* .products__row */
@@ -5180,6 +5191,48 @@ a.footer__bottom-item
 		flex: 1
 		a
 			color: #fff
+
+.for-building
+	/* .for-building__row */
+	&__row
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -10px
+		+media-breakpoint-up(lg)
+			flex-wrap: nowrap
+
+	/* .for-building__col */
+	&__col
+		max-width: 50%
+		flex: 0 0 50%
+		padding: 0 10px
+		margin-bottom: 10px
+		+media-breakpoint-up(sm)
+			flex: 0 0 33.333%
+			max-width: 33.333%
+		+media-breakpoint-up(lg)
+			flex: 0 0 16.6667%
+			margin-bottom: 0
+
+	/* .for-building__item */
+	&__item
+		background-color: #FAFAFA
+		min-height: 214px
+		padding: 10px 0
+
+	/* .for-building__item-icon */
+	&__item-icon
+		max-width: 120px
+		margin-left: auto
+		margin-right: auto
+		display: block
+		+media-breakpoint-up(sm)
+			max-width: 140px
+
+	/* .for-building__item-title */
+	&__item-title
+		font-weight: 600
+		text-align: center
 
 @keyframes "fade"
 	from
